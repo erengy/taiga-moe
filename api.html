@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="erengy">
+    <title>Comparison of Anime Library APIs</title>
+    <link rel="shortcut icon" href="img/icon/taiga_16px.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/taiga.css" rel="stylesheet">
+    <link href="css/taiga-api.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="http://taiga.moe">Home</a></li>
+        <li class="active">Comparison of Anime Library APIs</li>
+      </ol>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Comparison of Anime Library APIs</h1>
+          <p>This page aims to draw a comperative picture of <a href="https://hummingbird.me">Hummingbird</a>, <a href="https://kitsu.io">Kitsu</a> and <a href="https://myanimelist.net">MyAnimeList</a> APIs. I first put this together in order to aid the development of Taiga, but hopefully it will also help other developers and serve as an indicator of each API's shortcomings.</p>
+          <p>A couple of things to note before venturing forth:</p>
+          <ul>
+            <li>Some methods use different names to refer to the same value (e.g. <code>title</code> and <code>series_title</code>).</li>
+            <li>If an API is missing a value that others provide, it's marked as <code>n/a</code>. If the data is valuable and should be included in the API, it's <span class="text-danger">red</span>; otherwise it's <span class="text-muted">gray</span>.</li>
+            <!--<li>Hummingbird has a new API in the works that is partly available, but it's not yet documented.</li>-->
+            <!--<li>Herro shut down on 2014-02-09, which is why it is no longer listed here.</li>-->
+            <li>Hummingbird has been rebranded as Kitsu in December 2016.</li>
+          </ul>
+          <p>For more information on each API, please refer to their official documents:</p>
+          <ul>
+            <li>Hummingbird: <a href="https://github.com/hummingbird-me/hummingbird/wiki/API-Reference">API documentation</a>, <a href="https://forums.hummingbird.me/c/dev">Forum category</a></li>
+            <li>Kitsu: <a href="https://forums.hummingbird.me/t/kitsu-api-documentation/33367">API documentation</a></li>
+            <li>MyAnimeList: <a href="http://myanimelist.net/modules.php?go=api">API documentation</a>, <a href="http://myanimelist.net/clubs.php?cid=13727">Club page</a></li>
+          </ul>
+          <h2>Technical details</h2>
+          <div id="table-api-details" class="table-responsive">
+            <table class="table table-condensed table-hover">
+              <thead/>
+              <tbody/>
+            </table>
+          </div>
+          <h2>Available methods</h2>
+          <div id="table-api-methods" class="table-responsive">
+            <table class="table table-condensed table-hover">
+              <thead/>
+              <tbody/>
+            </table>
+          </div>
+          <h2>Metadata terms</h2>
+          <div id="table-api-metadata" class="table-responsive">
+            <table class="table table-condensed table-hover">
+              <thead/>
+              <tbody/>
+            </table>
+          </div>
+          <h2>Library terms</h2>
+          <div id="table-api-library" class="table-responsive">
+            <table class="table table-condensed table-hover">
+              <thead/>
+              <tbody/>
+            </table>
+          </div>
+          <div class="footnote">
+            <p>Last update was made on <abbr title="December 15th, 2016, 08:30">2016-12-15</abbr> by erengy. <a href="https://twitter.com/erengy">Let me know</a> if you find a mistake or would like to contribute in any other way.</p>
+            <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/taiga-api.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-20558496-2', 'erengy.com');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

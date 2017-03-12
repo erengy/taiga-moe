@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Makes life easier for anime enthusiasts">
+  <meta name="author" content="erengy">
+  <title>Taiga</title>
+  <link rel="canonical" href="http://taiga.moe" />
+  <link rel="shortcut icon" href="img/icon/taiga_16px.png">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+  <link rel="stylesheet" type="text/css" href="css/taiga.css">
+  <meta property="og:description" content="An open-source desktop application that helps you manage your anime library, discover new series, share watched episodes and download new ones." />
+  <meta property="og:image" content="http://taiga.moe/img/icon/taiga_256px.png" />
+  <meta property="og:title" content="Taiga" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://taiga.moe" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@taigaapp">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="container">
+    <ul id="main-tab" class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+      <li><a href="#features" data-toggle="tab">Features</a></li>
+      <li><a href="#support" data-toggle="tab">Support</a></li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+
+    <!-- Home page -->
+    <div class="tab-pane fade in active" id="home">
+      <!-- Main -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <img id="taiga-icon" src="img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <h2><span class="text-primary-null">Taiga</span> makes life easier for anime enthusiasts</h2>
+            <p>Taiga is an open-source desktop application for Windows. It automatically detects the episodes you're watching on your computer and synchronizes your progress with online services. It helps you manage your anime library, discover new series, share watched episodes and download new ones.</p>
+            <a id="download-button" class="btn btn-primary btn-lg" href="/download.php" title="~1MB — Works on Windows Vista and above"><span class="glyphicon glyphicon-download-alt"></span> Download <span id="download-version">v1.2</span></a>
+            <div id="download-details">
+              <small>Requires a <a href="https://hummingbird.me">Hummingbird</a> or <a href="https://myanimelist.net">MyAnimeList</a> account. Source code is available at the <a href="https://github.com/erengy/taiga">GitHub repository</a>.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <div class="inset">
+        <div class="container">
+          <div class="row">
+            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <a class="thumbnail" href="https://i.imgur.com/Da8RYVo.png" data-lightbox="screenshot" data-title="Anime List"><img src="https://i.imgur.com/Da8RYVo.png" alt="Anime List"></a>
+              <small><span class="hidden glyphicon glyphicon-th-list"></span> Manage your anime library</small>
+            </div>
+            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <a class="thumbnail" href="https://i.imgur.com/7T7dW2J.png" data-lightbox="screenshot" data-title="Now Playing"><img src="https://i.imgur.com/7T7dW2J.png" alt="Now Playing"></a>
+              <small><span class="hidden glyphicon glyphicon-film"></span> Keep track of watched episodes</small>
+            </div>
+            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <a class="thumbnail" href="https://i.imgur.com/4GAkBXs.png" data-lightbox="screenshot" data-title="Seasons"><img src="https://i.imgur.com/4GAkBXs.png" alt="Seasons"></a>
+              <small><span class="hidden glyphicon glyphicon-calendar"></span> Browse anime seasons</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quotes -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <blockquote>
+              <p>I-it's not like Taiga crashed f-for you or anything!</p>
+              <small><span class="glyphicon glyphicon-user"></span> cyruz</small>
+            </blockquote>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <blockquote>
+              <p>Taiga is damn sexy. And the code? It's so clean! Even though it's C++!</p>
+              <small><span class="glyphicon glyphicon-user"></span> rr-</small>
+            </blockquote>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <blockquote>
+              <p>Taiga is generally cold and treacherous.</p>
+              <small><span class="glyphicon glyphicon-user"></span> saka</small>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features page -->
+    <div class="tab-pane fade" id="features">
+      <div class="container">
+        <h3>It doesn't do everything, but it has some neat features</h3>
+        <div id="feature-list" class="row">
+          <div class="col-lg-10">
+            <div class="media">
+              <h2 class="media-object pull-left pull-top glyphicon glyphicon-film"></h2>
+              <div class="media-body">
+                <h4 class="media-heading">Automatic media detection</h4>
+                <p>Taiga can detect the media player of your choice, identify the files you're watching and update your list automatically. It works for streaming services too! <a data-toggle="collapse" href="#feature-more-media"><small>Learn more</small></a></p>
+                <div id="feature-more-media" class="collapse well">
+                  <p>Taiga supports dozens of media players including variations of Media Player Classic, VLC Media Player and Kodi (XBMC).</p>
+                  <p>If you prefer watching anime via an official streaming media provider, that's okay too. Taiga supports AnimeLab, Anime News Network, Crunchyroll, Daisuki, Plex Web App, Veoh, Viz Anime, Wakanim and YouTube. This feature requires you to use one of the supported web browsers; namely Google Chrome, Mozilla Firefox and Opera.</p>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <h2 class="media-object pull-left pull-top glyphicon glyphicon-calendar"></h2>
+              <div class="media-body">
+                <h4 class="media-heading">Interactive season charts</h4>
+                <p>Taiga's season charts are dynamic and up-to-date. You can sort them by global score or filter them by genres, among other things. And it takes only a few clicks to add an anime to your library. <a data-toggle="collapse" href="#feature-more-seasons"><small>Learn more</small></a></p>
+                <div id="feature-more-seasons" class="collapse well">
+                  <p>All anime seasons since 2011 are included, and the data is regularly updated as seasons come and go. You can see which series in a season are the most popular, and filter them down to your interests.</p>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <h2 class="media-object pull-left pull-top glyphicon glyphicon-share"></h2>
+              <div class="media-body">
+                <h4 class="media-heading">Share with other people</h4>
+                <p>Share the current episode you're watching by updating your Skype mood message, posting tweets to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL. <a data-toggle="collapse" href="#feature-more-sharing"><small>Learn more</small></a></p>
+                <div id="feature-more-sharing" class="collapse well">
+                  <p>One way to use HTTP requests is to update scripted forum signatures. For all the sharing methods, you can customize the text format to your needs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <h2 class="media-object pull-left pull-top glyphicon glyphicon-save"></h2>
+              <div class="media-body">
+                <h4 class="media-heading">Download new episodes</h4>
+                <p>Taiga is able to check RSS feeds for torrent releases. You can either manually choose which files you'd like to download, or fully automate the process by setting up smart filters. <a data-toggle="collapse" href="#feature-more-torrents"><small>Learn more</small></a></p>
+                <div id="feature-more-torrents" class="collapse well">
+                  <p>Some popular choices such as NyaaTorrents and TokoToshokan are available by default, but you can set the source to any RSS feed you like.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>And it's all packed up into a tiny file that fits into your palmtop! <span class="text-muted">ヽ(ﾟ〇ﾟ)ﾉ</span></h3>
+      </div>
+    </div>
+
+    <!-- Support page -->
+    <div class="tab-pane fade" id="support">
+      <div class="container">
+        <div class="alert alert-info">
+          <p>Visit our <a href="https://forums.hummingbird.me/t/taiga/10565/" class="alert-link">Hummingbird thread</a>, <a href="https://myanimelist.net/clubs.php?cid=21400" class="alert-link">MyAnimeList club</a> or <a href="https://github.com/erengy/taiga/issues" class="alert-link">GitHub page</a> to report issues and request new features.</p>
+          <p>You can also join our IRC channel, <a href="http://qchat.rizon.net/?nick=guest...&prompt=1&channels=taiga" class="alert-link">#taiga@irc.rizon.net</a>, or follow our Twitter account, <a href="https://twitter.com/taigaapp" class="alert-link">@taigaapp</a>.</p>
+        </div>
+        <h3>Frequently Asked Questions</h3>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-platforms">
+                <h3 class="panel-title">Which platforms does Taiga run on?</h3>
+              </a>
+            </div>
+            <div id="faq-platforms" class="panel-collapse collapse">
+              <div class="panel-body">Taiga is currently Windows only; it is compatible with anything between Windows Vista and Windows 10. It reportedly runs on Wine with limited functionality, but no promises. Our plan is to make Taiga a multi-platform application at version 2.0. In the meantime, check out <a href="https://github.com/erengy/taiga/wiki/Third-party-applications-for-MyAnimeList">this wiki page</a> for a list of alternative applications on other platforms.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-services">
+                <h3 class="panel-title">Will you support other services?</h3>
+              </a>
+            </div>
+            <div id="faq-services" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>We may add other services in the future, if they have a significant amount of active users and provide a friendly API for third-party developers. Currently the only candidate is <strong><a href="https://github.com/erengy/taiga/issues/62">AniList</a></strong>. Here's a quick summary of the situation with alternative services:</p>
+                <ul>
+                  <li><strong><a href="https://github.com/erengy/taiga/issues/188">AniDB</a>:</strong> HTTP API is limited, UDP API is unpleasant to work with.</li>
+                  <li><strong>Anime News Network:</strong> API is limited to encyclopedia, cannot be used for user lists.</li>
+                  <li><strong>Anime-Planet:</strong> Doesn't have an API. Doesn't even have plans for a public API.</li>
+                </ul>
+                <p>Note: Kitsu support is <a href="https://github.com/erengy/taiga/issues/341">coming!</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-services-sync">
+                <h3 class="panel-title">Why can't Taiga synchronize between services?</h3>
+              </a>
+            </div>
+            <div id="faq-services-sync" class="panel-collapse collapse">
+              <div class="panel-body">It's very difficult to get this right. Building a map of all anime between services, handling inconsistencies and keeping things up-to-date requires a great deal of development time and additional human effort. It'd be great to have this feature in Taiga, and we've given a lot of thought into it. However, it's not a feasible feature to work on at the moment. We do have some plans for a proper solution, but don't expect it arrive anytime soon.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-manga">
+                <h3 class="panel-title">How about manga list?</h3>
+              </a>
+            </div>
+            <div id="faq-manga" class="panel-collapse collapse">
+              <div class="panel-body">We have a <a href="https://github.com/erengy/taiga/issues/107">detailed discussion</a> about manga list support.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-seasons">
+                <h3 class="panel-title">When are you going to add the upcoming anime season?</h3>
+              </a>
+            </div>
+            <div id="faq-seasons" class="panel-collapse collapse">
+              <div class="panel-body">Season data is usually updated right before the majority of a season's new series begin. That means you'll get the update around the first week of January, April, July or October, depending on the season.</div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-airing">
+                <h3 class="panel-title">Could you add a feature that displays airing times of TV series?</h3>
+              </a>
+            </div>
+            <div id="faq-airing" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Unfortunately, the necessary data is not readily available for Taiga to use. Hummingbird and MyAnimeList don't provide such information, and other services (e.g. <a href="http://www.mahou.org/Showtime/">mahou Showtime!</a>, <a href="http://animecalendar.net">AnimeCalendar</a>) don't associate the series with their matching HB/MAL IDs. The only solution seems to be creating our own service, but we've decided against this because of its maintenance cost and some other concerns.</p>
+                <p>Here's a tip, though: If you enable the option to check new torrents automatically, Taiga can notify you when a new episode is available, or start downloading it immediately.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-stream">
+                <h3 class="panel-title">Could you add support for other streaming sites?</h3>
+              </a>
+            </div>
+            <div id="faq-stream" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>As long as the site provides a consistent way to detect the anime title and the episode number in its URL or page title, it's possible. Some services such as Funimation, Hulu and Netflix aren't supported because it's technically not possible to detect the episodes this way. Let us know if you have another service in mind.</p>
+                <p>Note that the current stance Taiga takes is that it only supports official streaming sites. There are ethical, technical, personal and strategic reasons for this.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-recognition">
+                <h3 class="panel-title">How does anime recognition work?</h3>
+              </a>
+            </div>
+            <div id="faq-recognition" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>The process consists of two distinct operations: Media detection and filename identification.</p>
+                <p>First of all, Taiga checks all windows to see if there are any media players (or web browsers) running. When it finds one, it goes on to use various methods to retrieve the filename of the video (for web browsers, it's the page title).</p>
+                <p>This is where <a href="https://github.com/erengy/anitomy">Anitomy</a> comes in. This piece of software, designed specifically for Taiga and similar applications, is able to parse anime video filenames and extract their elements. It uses advanced techniques, rather than simply applying regular expressions or ignoring everything inside brackets.</p>
+                <p>Here's an example filename: <code>[TaigaSubs]_Toradora!_-_01_[720p].mkv</code></p>
+                <p>And here's what Taiga sees:</p>
+                <ul>
+                <li>Release group: <code>TaigaSubs</code></li>
+                <li>Anime title: <code>Toradora!</code></li>
+                <li>Episode number: <code>01</code></li>
+                <li>Video resolution: <code>720p</code></li>
+                <li>File extension: <code>mkv</code></li>
+                </ul>
+                <p>Once Taiga has this information, it goes on to look up the anime title (in this case, <code>Toradora!</code>) in its database. This database consists of all the titles MyAnimeList/Hummingbird provides (e.g. Romaji titles, English titles, synonyms) for your anime list, as well as cached search results. Taiga does lots of smart things so that it doesn't trip over capitalization, punctuation and different numbering schemes. If available, Taiga looks up the name of the parent directory too, so that it's able to identify something like <code>X:\Anime\Toradora!\01 - Tiger and Dragon.mkv</code>.</p>
+                <p>When Taiga finds a single exact match (e.g. <code>Toradora!</code> &rarr; <a href="https://myanimelist.net/anime/4224/"><i>Toradora!</i></a>), it's done. This is what happens most of the time. When there are multiple matches that are equally likely, or when there are no direct matches, recognition fails. In these cases, Taiga displays a list of similar titles on the Now Playing page. You can click on a title to add the current title as an alternative title for that anime, after which it will be recognized. In other cases, you may need to manually add alternative titles via the Anime Information dialog. This is the primary method for resolving recognition issues.</p>
+                <p>Note that when you scan your library folders for available episodes or check your RSS feed for new releases, the process works just the same. Taiga parses each filename and tries to identify them.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-twitter">
+                <h3 class="panel-title">Twitter sharing doesn't work. Am I doing something wrong?</h3>
+              </a>
+            </div>
+            <div id="faq-twitter" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>As spamming every episode you watch on Twitter can be frowned upon by your followers, the default format string is set up to work only when you watch the last episode of a series. To change this behavior, you can use one of the following strings instead:</p>
+                <pre>Just watched: %title% #%episode% %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%/%total% %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%$if(%total%,/%total%) %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%$if(%total%,/%total%)$if(%score%, (Score: %score%)) %animeurl%</pre>
+                <pre>$ifequal(%episode%,%total%,Just completed: %title%,Just watched: %title% #%episode%$if(%total%,/%total%))$if(%score%, (Score: %score%)) %animeurl%</pre>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-format-strings">
+                <h3 class="panel-title">How do format strings work?</h3>
+              </a>
+            </div>
+            <div id="faq-format-strings" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>It's almost the same system that is used by <a href="http://wiki.hydrogenaudio.org/index.php?title=Foobar2000:Title_Formatting_Reference">foobar2000</a> and <a href="http://help.mp3tag.de/main_scripting.html">Mp3tag</a>. The basic idea is as following:</p>
+                <p>Variables are replaced by their corresponding value. If you're watching the third episode of <a href="https://myanimelist.net/anime/4224/"><em>Toradora!</em></a>, <code>%title% - %episode%</code> will appear as <code>Toradora! - 3</code>.</p>
+                <p>Functions allow you to set conditions or modify things. Here's some examples:</p>
+                <ul>
+                  <li><code>$ifequal(%episode%,1,First episode!,Another episode!)</code> will output <code>First episode!</code> if you're watching the first episode of some series.</li>
+                  <li><code>$substr($replace(Aisaka,s,b),2,4)</code> will output <code>baka</code>, replacing the <code>s</code> with a <code>b</code>, and then returning the first 4 characters starting from the 2nd one (zero-indexed).</li>
+                  <li><code>#$replace(%title%, ,)</code> will output the anime title as a hashtag (e.g. <code>#OnePunchMan</code>).</li>
+                </ul>
+                <p>Click the <em>Add...</em> button in the <em>Edit Format</em> dialog to see a list of available functions and variables.</p>
+                <p>Admittedly, these strings become pretty complicated once you start combining functions. If you have a better solution in mind that'd provide the same level of customizability, let us know.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-torrent-filters">
+                <h3 class="panel-title">How do torrent filters work?</h3>
+              </a>
+            </div>
+            <div id="faq-torrent-filters" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Before checking for new torrents, you may set up some filters in order to automatically select the ones you're interested in and discard the others. Each filter consists of one or more conditions, and an action to be performed on torrents that match those conditions, such as, "if the video resolution is less than 720p, discard the torrent". It's possible to limit a filter to one or more anime in your library.</p>
+                <p><em>Discard</em> and <em>Select</em> actions work the way you'd expect, whereas <em>Prefer</em> is a bit more complicated: If it's a general filter, torrents that don't match the filter are discarded. If it's a limited filter, torrents that match the filter are selected, and torrents that don't match the filter are discarded.</p>
+                <p>Keep in mind that:</p>
+                <ul>
+                  <li>No torrents are selected by default.</li>
+                  <li>Filters are processed from top to bottom.</li>
+                  <li>It's not possible to select previously discarded torrents.</li>
+                  <li>It's possible to discard previously selected torrents.</li>
+                </ul>
+                <p>There's more than one way to achieve what you want with filters. For instance, you can either select everything on your currently-watching list and then go about discarding bad fansub group names and other keywords, or you can just create a new limited filter for each anime and choose a fansub group and video resolution for it. The latter will give you more control over each title.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-torrent-source">
+                <h3 class="panel-title">Why can't Taiga find some torrents?</h3>
+              </a>
+            </div>
+            <div id="faq-torrent-source" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>The default RSS feed URLs for Nyaa use the "English-translated anime" category (<code>cats=1_37</code>) and "Trusted only" filter (<code>filter=2</code>). By modifying these values (e.g. <code>filter=0</code>) via <em>Settings → Torrents → Discovery</em>, you can see more releases on the Torrents page. Check out Nyaa's website for other values.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-ui">
+                <h3 class="panel-title">Any tips on the user interface?</h3>
+              </a>
+            </div>
+            <div id="faq-ui" class="panel-collapse collapse">
+              <div class="panel-body">
+                <ul>
+                  <li>The little square icons beside anime list items depict their airing status. Green means currently airing, blue means finished airing, red means not yet aired, and finally, gray is for unknown.</li>
+                  <li>You can drag and drop anime list items onto status tabs in order to quickly move them around. Anime list items can be dragged and dropped over the search box and some sidebar items as well.</li>
+                  <li>External links menu is customizable through <em>Settings &rarr; Application &rarr; Interface</em>.</li>
+                  <li>There are various keyboard shortcuts available:
+                    <ul>
+                      <li><kbd>F5</kbd> can be used to refresh the current dialog.</li>
+                      <li>On <em>Anime List</em>, <kbd>Enter</kbd> triggers the same action as double-clicking on the list item, <kbd>Ctrl+P</kbd> plays the next episode, <kbd>Ctrl</kbd> and number keys (e.g. <kbd>Ctrl+7</kbd>) changes the score, <kbd>+</kbd> and <kbd>-</kbd> keys on numpad increments or decrements watched episodes.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#faq-donate">
+                <h3 class="panel-title">How can I donate to Taiga?</h3>
+              </a>
+            </div>
+            <div id="faq-donate" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Since 2008, Taiga has been developed and maintained by <a href="http://erengy.com" title="erengy">a single person</a>, for the most part. While getting paid for his efforts would provide some motivation, he'd very much appreciate it if you spent the money on a better cause.</p>
+                <p>If you'd like to donate to Taiga, please consider saving the life of a real tiger instead. We suggest supporting non-profit organizations such as <a href="http://www.21stcenturytiger.org">21st Century Tiger</a> and <a href="http://bigcatrescue.org/">Big Cat Rescue</a>. <a href="https://github.com/erengy/taiga/issues/89">Let us know</a> if you have any suggestions in this regard.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/lightbox.min.js"></script>
+  <script src="js/taiga.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-20558496-2', 'erengy.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

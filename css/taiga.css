@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700);
+
+
+body {
+  background-color: #fdfdfd;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+blockquote {
+  font-size: 1em;
+}
+
+code {
+  background: #f0f0f0;
+  color: inherit;
+}
+
+kbd {
+  background-color: #f8f8f8;
+  color: #777;
+}
+
+
+.inset {
+  background: #eee;
+  margin: 40px 0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.media .glyphicon {
+  color: #428BCA;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #fdfdfd;
+}
+
+.pull-top {
+  margin-top: 0;
+}
+
+.screenshot {
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .screenshot {
+    margin-bottom: 20px;
+  }
+  .screenshot:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.text-muted {
+  color: #999;
+}
+
+.thumbnail {
+  margin-bottom: 5px;
+}
+
+.well {
+  padding-bottom: 9px;
+}
+
+
+#taiga-icon {
+  max-width: 100%;
+}
+@media (min-width: 1200px) {
+  #taiga-icon {
+    height: 225px;
+  }
+}
+
+#download-button {
+  margin: 10px 0;
+}
+
+#download-version {
+  color: #adf;
+}
+
+#feature-list {
+  margin: 20px 0;
+}
+
+#main-tab {
+  margin-bottom: 20px;
+}
