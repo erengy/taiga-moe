@@ -613,7 +613,7 @@ var api_data = {
         }
       ],
       "notes": [
-        "<a href='http://myanimelist.net/forum/?topicid=314309'>Deprecated</a> as of 2011-08-09, but is still included in malappinfo.php results.",
+        "<a href='https://myanimelist.net/forum/?topicid=314309'>Deprecated</a> as of 2011-08-09, but is still included in malappinfo.php results.",
         "Can set a new value, but cannot get the current value."
       ]
     }
