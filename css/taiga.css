@@ -99,3 +99,12 @@ kbd {
 #main-tab {
   margin-bottom: 20px;
 }
+
+
+.page-api h2 {
+  margin-top: 30px;
+}
+
+.page-api .breadcrumb {
+  margin-bottom: 0;
+}
