@@ -11,7 +11,7 @@
     <link href="css/taiga.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="page-latest">
     <div class="container">
       <div class="row">
         <ol class="breadcrumb">
@@ -20,17 +20,21 @@
         </ol>
       </div>
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-9">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <img id="taiga-icon" src="img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
           <h1>Latest Build of Taiga</h1>
-          <p>If you are looking for Kitsu support and came directly to this page, please refer to the <a href="https://github.com/erengy/taiga/issues/341">relevant GitHub issue</a> first.</p>
+          <div class="alert alert-info">
+            <p>Looking for <img src="img/kitsu.svg" height="16"> <a href="https://kitsu.io" class="alert-link">Kitsu</a> support? Check out the <a href="https://github.com/erengy/taiga/issues/341#issuecomment-268888446" class="alert-link">relevant GitHub issue</a> first.</p>
+          </div>
           <p>Please read before downloading:</p>
           <ul>
             <li>Be aware that this build may include unstable features.</li>
             <li>Before doing anything, close Taiga and take a backup of your installation directory (<code>%AppData%\Taiga</code> by default).</li>
             <li>This is not an installer. You need to copy the file into your installation directory, replacing the old <code>Taiga.exe</code>.</li>
           </ul>
-          <a class="btn btn-primary btn-sm" href="/latest.php"><span class="glyphicon glyphicon-download-alt"></span> Download <span id="download-version">v1.3.0-alpha</span></a>
+          <a id="download-button" class="btn btn-primary btn-md" href="/latest.php"><span class="glyphicon glyphicon-download-alt"></span> Download <span id="download-version">v1.3.0-alpha</span></a>
         </div>
       </div>
     </div>

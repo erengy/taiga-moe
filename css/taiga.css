@@ -105,3 +105,8 @@ kbd {
 .page-api .breadcrumb {
   margin-bottom: 0;
 }
+
+
+.page-latest h1 {
+  margin-top: 0;
+}
