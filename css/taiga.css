@@ -1,7 +1,7 @@
 body {
   background-color: #fdfdfd;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
