@@ -253,91 +253,6 @@
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <a data-toggle="collapse" href="#faq-recognition">
-                <h3 class="panel-title">How does anime recognition work?</h3>
-              </a>
-            </div>
-            <div id="faq-recognition" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>The process consists of two distinct operations: Media detection and filename identification.</p>
-                <p>First of all, Taiga checks all windows to see if there are any media players (or web browsers) running, with help from <a href="https://github.com/erengy/anisthesia">Anisthesia</a>. When it finds one, it goes on to use various methods to retrieve the filename of the video (for web browsers, it's the page title).</p>
-                <p>This is where <a href="https://github.com/erengy/anitomy">Anitomy</a> comes in. This piece of software, designed specifically for Taiga and similar applications, is able to parse anime video filenames and extract their elements. It uses advanced techniques, rather than simply applying regular expressions or ignoring everything inside brackets.</p>
-                <p>Here's an example filename: <code>[TaigaSubs]_Toradora!_-_01_[720p].mkv</code></p>
-                <p>And here's what Taiga sees:</p>
-                <ul>
-                <li>Release group: <code>TaigaSubs</code></li>
-                <li>Anime title: <code>Toradora!</code></li>
-                <li>Episode number: <code>01</code></li>
-                <li>Video resolution: <code>720p</code></li>
-                <li>File extension: <code>mkv</code></li>
-                </ul>
-                <p>Once Taiga has this information, it goes on to look up the anime title (in this case, <code>Toradora!</code>) in its database. This database consists of all the titles MyAnimeList/Kitsu provides (e.g. Romaji titles, English titles, synonyms) for your anime list, as well as cached search results. Taiga does lots of smart things so that it doesn't trip over capitalization, punctuation and different numbering schemes. If available, Taiga looks up the name of the parent directory too, so that it's able to identify something like <code>X:\Anime\Toradora!\01 - Tiger and Dragon.mkv</code>.</p>
-                <p>When Taiga finds a single exact match (e.g. <code>Toradora!</code> &rarr; <a href="https://myanimelist.net/anime/4224/"><i>Toradora!</i></a>), it's done. This is what happens most of the time. When there are multiple matches that are equally likely, or when there are no direct matches, recognition fails. In these cases, Taiga displays a list of similar titles on the Now Playing page. You can click on a title to add the current title as an alternative title for that anime, after which it will be recognized. In other cases, you may need to manually add alternative titles via the Anime Information dialog. This is the primary method for resolving recognition issues.</p>
-                <p>Note that when you scan your library folders for available episodes or check your RSS feed for new releases, the process works just the same. Taiga parses each filename and tries to identify them.</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a data-toggle="collapse" href="#faq-twitter">
-                <h3 class="panel-title">Twitter sharing doesn't work. Am I doing something wrong?</h3>
-              </a>
-            </div>
-            <div id="faq-twitter" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>Spamming every watched episode to Twitter can annoy your followers, which is why the default format string is set up to work only when you watch the first or the last episode of a series. To change this behavior, you can use one of the following strings instead:</p>
-                <pre>Just watched: %title% #%episode% %animeurl%</pre>
-                <pre>Just watched: %title% #%episode%/%total% %animeurl%</pre>
-                <pre>Just watched: %title% #%episode%$if(%total%,/%total%) %animeurl%</pre>
-                <pre>Just watched: %title% #%episode%$if(%total%,/%total%)$if(%score%, (Score: %score%)) %animeurl%</pre>
-                <pre>$ifequal(%episode%,%total%,Just completed: %title%,Just watched: %title% #%episode%$if(%total%,/%total%))$if(%score%, (Score: %score%)) %animeurl%</pre>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a data-toggle="collapse" href="#faq-format-strings">
-                <h3 class="panel-title">How do format strings work?</h3>
-              </a>
-            </div>
-            <div id="faq-format-strings" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>It's almost the same system that is used by <a href="http://wiki.hydrogenaud.io/index.php?title=Foobar2000:Title_Formatting_Reference">foobar2000</a> and <a href="http://help.mp3tag.de/main_scripting.html">Mp3tag</a>. The basic idea is as following:</p>
-                <p>Variables are replaced by their corresponding values. If you're watching the third episode of <a href="https://myanimelist.net/anime/4224/"><em>Toradora!</em></a>, <code>%title% - %episode%</code> will appear as <code>Toradora! - 3</code>.</p>
-                <p>Functions allow you to set conditions or modify things. Here's some examples:</p>
-                <ul>
-                  <li><code>$ifequal(%episode%,1,First episode!,Another episode!)</code> will output <code>First episode!</code> if you're watching the first episode of some series.</li>
-                  <li><code>$substr($replace(Aisaka,s,b),2,4)</code> will output <code>baka</code>, replacing the <code>s</code> with a <code>b</code>, and then returning the first 4 characters starting from the 2nd one (zero-indexed).</li>
-                  <li><code>#$replace(%title%, ,)</code> will output the anime title as a hashtag (e.g. <code>#OnePunchMan</code>).</li>
-                </ul>
-                <p>Click the <em>Add...</em> button in the <em>Edit Format</em> dialog to see a list of available functions and variables.</p>
-                <p>Admittedly, these strings become pretty complicated once you start combining functions. If you have a better solution in mind that'd provide the same level of customizability, let us know.</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <a data-toggle="collapse" href="#faq-torrent-filters">
-                <h3 class="panel-title">How do torrent filters work?</h3>
-              </a>
-            </div>
-            <div id="faq-torrent-filters" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>Before checking for new torrents, you may set up some filters in order to automatically select the ones you're interested in and discard the others. Each filter consists of one or more conditions, and an action to be performed on torrents that match those conditions, such as, "if the video resolution is less than 720p, discard the torrent". It's possible to limit a filter to one or more anime in your library.</p>
-                <p><em>Discard</em> and <em>Select</em> actions work the way you'd expect, whereas <em>Prefer</em> is a bit more complicated: If it's a general filter, torrents that don't match the filter are discarded. If it's a limited filter, torrents that match the filter are selected, and torrents that don't match the filter are discarded.</p>
-                <p>Keep in mind that:</p>
-                <ul>
-                  <li>No torrents are selected by default.</li>
-                  <li>Filters are processed from top to bottom.</li>
-                  <li>It's not possible to select previously discarded torrents.</li>
-                  <li>It's possible to discard previously selected torrents.</li>
-                </ul>
-                <p>There's more than one way to achieve what you want with filters. For instance, you can either select everything on your currently-watching list and then go about discarding bad fansub group names and other keywords, or you can just create a new limited filter for each anime and choose a fansub group and video resolution for it. The latter will give you more control over each title.</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
               <a data-toggle="collapse" href="#faq-ui">
                 <h3 class="panel-title">Any tips on the user interface?</h3>
               </a>
@@ -368,6 +283,114 @@
               <div class="panel-body">
                 <p>Since 2008, Taiga has been developed and maintained by <a href="http://erengy.com" title="erengy">a single person</a>, for the most part. While getting paid for his efforts would provide some motivation, he'd very much appreciate it if you spent the money on a better cause.</p>
                 <p>If you'd like to donate to Taiga, please consider saving the life of a real tiger instead. We suggest supporting non-profit organizations such as <a href="http://www.21stcenturytiger.org">21st Century Tiger</a> and <a href="https://bigcatrescue.org">Big Cat Rescue</a>. <a href="https://github.com/erengy/taiga/issues/89">Let us know</a> if you have any suggestions in this regard.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Common Issues</h3>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#issue-settings">
+                <h3 class="panel-title">Settings or other data cannot be saved.</h3>
+              </a>
+            </div>
+            <div id="issue-settings" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>We have a few suggestions in this regard:</p>
+                <ol>
+                  <li>Try running Taiga as administrator.</li>
+                  <li>If there's a security application on your system, try whitelisting Taiga. It might be blocking Taiga from working properly.</li>
+                  <li>Make sure Taiga is installed to its default directory (<code>C:\Users\{username}\AppData\Roaming\Taiga</code>). If you have it installed under a protected directory such as <em>Program Files</em>, User Account Control may prevent Taiga from saving its settings and other data.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#issue-twitter">
+                <h3 class="panel-title">Twitter sharing doesn't work.</h3>
+              </a>
+            </div>
+            <div id="issue-twitter" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Spamming every watched episode to Twitter can annoy your followers, which is why the default format string is set up to work only when you watch the first or the last episode of a series. To change this behavior, you can use one of the following strings instead:</p>
+                <pre>Just watched: %title% #%episode% %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%/%total% %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%$if(%total%,/%total%) %animeurl%</pre>
+                <pre>Just watched: %title% #%episode%$if(%total%,/%total%)$if(%score%, (Score: %score%)) %animeurl%</pre>
+                <pre>$ifequal(%episode%,%total%,Just completed: %title%,Just watched: %title% #%episode%$if(%total%,/%total%))$if(%score%, (Score: %score%)) %animeurl%</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>How It Works</h3>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#how-recognition">
+                <h3 class="panel-title">Anime recognition</h3>
+              </a>
+            </div>
+            <div id="how-recognition" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>The process consists of two distinct operations: Media detection and filename identification.</p>
+                <p>First of all, Taiga checks all windows to see if there are any media players (or web browsers) running, with help from <a href="https://github.com/erengy/anisthesia">Anisthesia</a>. When it finds one, it goes on to use various methods to retrieve the filename of the video (for web browsers, it's the page title).</p>
+                <p>This is where <a href="https://github.com/erengy/anitomy">Anitomy</a> comes in. This piece of software, designed specifically for Taiga and similar applications, is able to parse anime video filenames and extract their elements. It uses advanced techniques, rather than simply applying regular expressions or ignoring everything inside brackets.</p>
+                <p>Here's an example filename: <code>[TaigaSubs]_Toradora!_-_01_[720p].mkv</code></p>
+                <p>And here's what Taiga sees:</p>
+                <ul>
+                <li>Release group: <code>TaigaSubs</code></li>
+                <li>Anime title: <code>Toradora!</code></li>
+                <li>Episode number: <code>01</code></li>
+                <li>Video resolution: <code>720p</code></li>
+                <li>File extension: <code>mkv</code></li>
+                </ul>
+                <p>Once Taiga has this information, it goes on to look up the anime title (in this case, <code>Toradora!</code>) in its database. This database consists of all the titles MyAnimeList/Kitsu provides (e.g. Romaji titles, English titles, synonyms) for your anime list, as well as cached search results. Taiga does lots of smart things so that it doesn't trip over capitalization, punctuation and different numbering schemes. If available, Taiga looks up the name of the parent directory too, so that it's able to identify something like <code>X:\Anime\Toradora!\01 - Tiger and Dragon.mkv</code>.</p>
+                <p>When Taiga finds a single exact match (e.g. <code>Toradora!</code> &rarr; <a href="https://myanimelist.net/anime/4224/"><i>Toradora!</i></a>), it's done. This is what happens most of the time. When there are multiple matches that are equally likely, or when there are no direct matches, recognition fails. In these cases, Taiga displays a list of similar titles on the Now Playing page. You can click on a title to add the current title as an alternative title for that anime, after which it will be recognized. In other cases, you may need to manually add alternative titles via the Anime Information dialog. This is the primary method for resolving recognition issues.</p>
+                <p>Note that when you scan your library folders for available episodes or check your RSS feed for new releases, the process works just the same. Taiga parses each filename and tries to identify them.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#how-format-strings">
+                <h3 class="panel-title">Format strings</h3>
+              </a>
+            </div>
+            <div id="how-format-strings" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>It's almost the same system that is used by <a href="http://wiki.hydrogenaud.io/index.php?title=Foobar2000:Title_Formatting_Reference">foobar2000</a> and <a href="http://help.mp3tag.de/main_scripting.html">Mp3tag</a>. The basic idea is as following:</p>
+                <p>Variables are replaced by their corresponding values. If you're watching the third episode of <a href="https://myanimelist.net/anime/4224/"><em>Toradora!</em></a>, <code>%title% - %episode%</code> will appear as <code>Toradora! - 3</code>.</p>
+                <p>Functions allow you to set conditions or modify things. Here's some examples:</p>
+                <ul>
+                  <li><code>$ifequal(%episode%,1,First episode!,Another episode!)</code> will output <code>First episode!</code> if you're watching the first episode of some series.</li>
+                  <li><code>$substr($replace(Aisaka,s,b),2,4)</code> will output <code>baka</code>, replacing the <code>s</code> with a <code>b</code>, and then returning the first 4 characters starting from the 2nd one (zero-indexed).</li>
+                  <li><code>#$replace(%title%, ,)</code> will output the anime title as a hashtag (e.g. <code>#OnePunchMan</code>).</li>
+                </ul>
+                <p>Click the <em>Add...</em> button in the <em>Edit Format</em> dialog to see a list of available functions and variables.</p>
+                <p>Admittedly, these strings become pretty complicated once you start combining functions. If you have a better solution in mind that'd provide the same level of customizability, let us know.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" href="#how-torrent-filters">
+                <h3 class="panel-title">Torrent filters</h3>
+              </a>
+            </div>
+            <div id="how-torrent-filters" class="panel-collapse collapse">
+              <div class="panel-body">
+                <p>Before checking for new torrents, you may set up some filters in order to automatically select the ones you're interested in and discard the others. Each filter consists of one or more conditions, and an action to be performed on torrents that match those conditions, such as, "if the video resolution is less than 720p, discard the torrent". It's possible to limit a filter to one or more anime in your library.</p>
+                <p><em>Discard</em> and <em>Select</em> actions work the way you'd expect, whereas <em>Prefer</em> is a bit more complicated: If it's a general filter, torrents that don't match the filter are discarded. If it's a limited filter, torrents that match the filter are selected, and torrents that don't match the filter are discarded.</p>
+                <p>Keep in mind that:</p>
+                <ul>
+                  <li>No torrents are selected by default.</li>
+                  <li>Filters are processed from top to bottom.</li>
+                  <li>It's not possible to select previously discarded torrents.</li>
+                  <li>It's possible to discard previously selected torrents.</li>
+                </ul>
+                <p>There's more than one way to achieve what you want with filters. For instance, you can either select everything on your currently-watching list and then go about discarding bad fansub group names and other keywords, or you can just create a new limited filter for each anime and choose a fansub group and video resolution for it. The latter will give you more control over each title.</p>
               </div>
             </div>
           </div>
