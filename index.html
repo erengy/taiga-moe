@@ -161,7 +161,7 @@
     <div class="tab-pane fade" id="support">
       <div class="container">
         <div class="alert alert-info">
-          <p>Visit our <a href="https://kitsu.io/groups/taiga" class="alert-link">Kitsu group</a>, <a href="https://myanimelist.net/clubs.php?cid=21400" class="alert-link">MyAnimeList club</a> or <a href="https://github.com/erengy/taiga/issues" class="alert-link">GitHub page</a> to report issues and request new features.</p>
+          <p>Visit our <a href="https://kitsu.io/groups/taiga" class="alert-link">Kitsu group</a>, <a href="https://myanimelist.net/clubs.php?cid=21400" class="alert-link">MyAnimeList club</a> or <a href="https://github.com/erengy/taiga/issues" class="alert-link">GitHub page</a> to report issues and to request new features.</p>
           <p>You can also join our IRC channel, <a href="https://qchat.rizon.net/?nick=guest...&prompt=1&channels=taiga" class="alert-link">#taiga@irc.rizon.net</a>, or follow our Twitter account, <a href="https://twitter.com/taigaapp" class="alert-link">@taigaapp</a>.</p>
         </div>
         <h3>Frequently Asked Questions</h3>
@@ -184,7 +184,7 @@
             </div>
             <div id="faq-services" class="panel-collapse collapse">
               <div class="panel-body">
-                <p><img src="img/kitsu.svg" height="16"> Kitsu support is <a href="https://github.com/erengy/taiga/issues/341">coming!</a></p>
+                <p><img src="img/kitsu.svg" height="16"> <strong>Kitsu</strong> support is <a href="https://github.com/erengy/taiga/issues/341">coming!</a></p>
                 <p>We may add other services in the future, if they have a significant amount of active users and provide a friendly API for third-party developers. Currently the only candidate is <strong><a href="https://github.com/erengy/taiga/issues/62">AniList</a></strong>. Here's a quick summary of the situation with alternative services:</p>
                 <ul>
                   <li><strong><a href="https://github.com/erengy/taiga/issues/188">AniDB</a>:</strong> HTTP API is limited, UDP API is unpleasant to work with.</li>
@@ -233,7 +233,7 @@
             </div>
             <div id="faq-airing" class="panel-collapse collapse">
               <div class="panel-body">
-                <p>Unfortunately, the necessary data is not readily available for Taiga to use. Hummingbird and MyAnimeList don't provide such information, and other services (e.g. <a href="http://www.mahou.org/Showtime/">mahou Showtime!</a>, <a href="http://animecalendar.net">AnimeCalendar</a>) don't associate the series with their matching HB/MAL IDs. The only solution seems to be creating our own service, but we've decided against this because of its maintenance cost and some other concerns.</p>
+                <p>Unfortunately, the necessary data is not readily available for Taiga to use. Kitsu and MyAnimeList don't provide such information, and other services (e.g. <a href="http://www.mahou.org/Showtime/">mahou Showtime!</a>, <a href="http://animecalendar.net">AnimeCalendar</a>) don't associate the series with their matching IDs. The only solution seems to be creating our own service, but we've decided against this because of its maintenance cost and some other concerns.</p>
                 <p>Here's a tip, though: If you enable the option to check new torrents automatically, Taiga can notify you when a new episode is available, or start downloading it immediately.</p>
               </div>
             </div>
@@ -260,7 +260,7 @@
             <div id="faq-recognition" class="panel-collapse collapse">
               <div class="panel-body">
                 <p>The process consists of two distinct operations: Media detection and filename identification.</p>
-                <p>First of all, Taiga checks all windows to see if there are any media players (or web browsers) running. When it finds one, it goes on to use various methods to retrieve the filename of the video (for web browsers, it's the page title).</p>
+                <p>First of all, Taiga checks all windows to see if there are any media players (or web browsers) running, with help from <a href="https://github.com/erengy/anisthesia">Anisthesia</a>. When it finds one, it goes on to use various methods to retrieve the filename of the video (for web browsers, it's the page title).</p>
                 <p>This is where <a href="https://github.com/erengy/anitomy">Anitomy</a> comes in. This piece of software, designed specifically for Taiga and similar applications, is able to parse anime video filenames and extract their elements. It uses advanced techniques, rather than simply applying regular expressions or ignoring everything inside brackets.</p>
                 <p>Here's an example filename: <code>[TaigaSubs]_Toradora!_-_01_[720p].mkv</code></p>
                 <p>And here's what Taiga sees:</p>
@@ -271,7 +271,7 @@
                 <li>Video resolution: <code>720p</code></li>
                 <li>File extension: <code>mkv</code></li>
                 </ul>
-                <p>Once Taiga has this information, it goes on to look up the anime title (in this case, <code>Toradora!</code>) in its database. This database consists of all the titles MyAnimeList/Hummingbird provides (e.g. Romaji titles, English titles, synonyms) for your anime list, as well as cached search results. Taiga does lots of smart things so that it doesn't trip over capitalization, punctuation and different numbering schemes. If available, Taiga looks up the name of the parent directory too, so that it's able to identify something like <code>X:\Anime\Toradora!\01 - Tiger and Dragon.mkv</code>.</p>
+                <p>Once Taiga has this information, it goes on to look up the anime title (in this case, <code>Toradora!</code>) in its database. This database consists of all the titles MyAnimeList/Kitsu provides (e.g. Romaji titles, English titles, synonyms) for your anime list, as well as cached search results. Taiga does lots of smart things so that it doesn't trip over capitalization, punctuation and different numbering schemes. If available, Taiga looks up the name of the parent directory too, so that it's able to identify something like <code>X:\Anime\Toradora!\01 - Tiger and Dragon.mkv</code>.</p>
                 <p>When Taiga finds a single exact match (e.g. <code>Toradora!</code> &rarr; <a href="https://myanimelist.net/anime/4224/"><i>Toradora!</i></a>), it's done. This is what happens most of the time. When there are multiple matches that are equally likely, or when there are no direct matches, recognition fails. In these cases, Taiga displays a list of similar titles on the Now Playing page. You can click on a title to add the current title as an alternative title for that anime, after which it will be recognized. In other cases, you may need to manually add alternative titles via the Anime Information dialog. This is the primary method for resolving recognition issues.</p>
                 <p>Note that when you scan your library folders for available episodes or check your RSS feed for new releases, the process works just the same. Taiga parses each filename and tries to identify them.</p>
               </div>
@@ -285,7 +285,7 @@
             </div>
             <div id="faq-twitter" class="panel-collapse collapse">
               <div class="panel-body">
-                <p>Spamming every watched episode to Twitter can annoy your followers, which is why the default format string is set up to work only when you watch the last episode of a series. To change this behavior, you can use one of the following strings instead:</p>
+                <p>Spamming every watched episode to Twitter can annoy your followers, which is why the default format string is set up to work only when you watch the first or the last episode of a series. To change this behavior, you can use one of the following strings instead:</p>
                 <pre>Just watched: %title% #%episode% %animeurl%</pre>
                 <pre>Just watched: %title% #%episode%/%total% %animeurl%</pre>
                 <pre>Just watched: %title% #%episode%$if(%total%,/%total%) %animeurl%</pre>
