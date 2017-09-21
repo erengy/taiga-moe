@@ -342,6 +342,7 @@ var api_data = {
           "taiga": "status",
           "herro": "series_status",
           "hummingbird-v1": "status",
+          "kitsu": "status",
           "myanimelist": "status, series_status"
         },
         {
@@ -368,7 +369,7 @@ var api_data = {
           "herro": "series_type",
           "hummingbird-v1": "show_type",
           "hummingbird-v2": "show_type",
-          "kitsu": "showType",
+          "kitsu": "subtype",
           "myanimelist": "type, series_type"
         },
         {
@@ -377,7 +378,7 @@ var api_data = {
           "herro": "",
           "hummingbird-v1": "age_rating",
           "hummingbird-v2": "age_rating",
-          "kitsu": "ageRating, ageRatingGuide",
+          "kitsu": "ageRating, ageRatingGuide, nsfw",
           "myanimelist": ""
         },
         {
@@ -399,7 +400,7 @@ var api_data = {
           "herro": "series_producers",
           "hummingbird-v1": "",
           "hummingbird-v2": "",
-          "kitsu": "",
+          "kitsu": "producers",
           "myanimelist": ""
         },
         {
@@ -499,7 +500,7 @@ var api_data = {
           "taiga": "date",
           "herro": "",
           "hummingbird-v1": "",
-          "kitsu": "",
+          "kitsu": "startedAt",
           "myanimelist": "date_start, my_start_date"
         },
         {
@@ -507,7 +508,7 @@ var api_data = {
           "taiga": "date",
           "herro": "",
           "hummingbird-v1": "",
-          "kitsu": "",
+          "kitsu": "finishedAt",
           "myanimelist": "date_finish, my_finish_date"
         },
         {
