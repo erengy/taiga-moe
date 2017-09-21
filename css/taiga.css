@@ -86,11 +86,8 @@ kbd {
 }
 
 
-.alert-info {
-  margin-bottom: 0;
-}
-
-.panel-group {
+.page-index .alert-info,
+.page-index .panel-group {
   margin-bottom: 0;
 }
 
