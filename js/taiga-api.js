@@ -16,16 +16,21 @@ var api_data = {
       "canonical": "taiga"
     },
     /**/
+    {
+      "name": "AniList",
+      "canonical": "anilist"
+    },
     /**
     {
       "name": "Herro",
       "canonical": "herro"
     },
     /**/
-    {
+    /**{
       "name": "Hummingbird v1",
       "canonical": "hummingbird-v1"
     },
+    /**/
     /**
     {
       "name": "Hummingbird v2",
@@ -48,6 +53,7 @@ var api_data = {
       "table": [
         {
           "name": "Protocol",
+          "anilist": "HTTPS",
           "herro": "HTTP",
           "hummingbird-v1": "HTTP/HTTPS",
           "hummingbird-v2": "HTTPS",
@@ -56,6 +62,7 @@ var api_data = {
         },
         {
           "name": "Data exchange format",
+          "anilist": "GraphQL",
           "herro": "JSON",
           "hummingbird-v1": {
             "text": "JSON",
@@ -82,6 +89,7 @@ var api_data = {
         },*/
         {
           "name": "gzip support",
+          "anilist": "Yes",
           "herro": {
             "text": "",
             "note": "?"
@@ -96,6 +104,7 @@ var api_data = {
         },
         {
           "name": "Unique identifiers",
+          "anilist": "Integer",
           "herro": {
             "text": "String",
             "note": "4"
@@ -130,6 +139,7 @@ var api_data = {
       "table": [
         {
           "name": "Verify credentials",
+          "anilist": true,
           "herro": false,
           "hummingbird-v1": true,
           "hummingbird-v2": false,
@@ -138,6 +148,7 @@ var api_data = {
         },
         {
           "name": "Add library entry",
+          "anilist": true,
           "herro": true,
           "hummingbird-v1": true,
           "hummingbird-v2": false,
@@ -146,6 +157,7 @@ var api_data = {
         },
         {
           "name": "Delete library entry",
+          "anilist": true,
           "herro": true,
           "hummingbird-v1": true,
           "hummingbird-v2": false,
@@ -154,6 +166,7 @@ var api_data = {
         },
         {
           "name": "Update library entry",
+          "anilist": true,
           "herro": true,
           "hummingbird-v1": true,
           "hummingbird-v2": false,
@@ -162,6 +175,7 @@ var api_data = {
         },
         {
           "name": "Search title",
+          "anilist": true,
           "herro": {
             "text": true,
             "note": "&nbsp;2"
@@ -182,6 +196,7 @@ var api_data = {
         },
         {
           "name": "Get metadata by ID",
+          "anilist": true,
           "herro": true,
           "hummingbird-v1": true,
           "hummingbird-v2": true,
@@ -190,6 +205,7 @@ var api_data = {
         },
         {
           "name": "Get all library entries",
+          "anilist": true,
           "herro": true,
           "hummingbird-v1": true,
           "hummingbird-v2": false,
@@ -201,6 +217,7 @@ var api_data = {
         },
         {
           "name": "Get all database entries",
+          "anilist": true,
           "herro": {
             "text": true,
             "note": "&nbsp;2"
@@ -212,6 +229,7 @@ var api_data = {
         },
         {
           "name": "Get recommendations",
+          "anilist": false,
           "herro": true,
           "hummingbird-v1": false,
           "hummingbird-v2": false,
@@ -231,6 +249,7 @@ var api_data = {
         {
           "name": "Unique identifier",
           "taiga": "id",
+          "anilist": "id",
           "herro": "_id",
           "hummingbird-v1": "id, anime_id",
           "hummingbird-v2": "id",
@@ -253,6 +272,7 @@ var api_data = {
         {
           "name": "Poster image URL",
           "taiga": "resource",
+          "anilist": "coverImage",
           "herro": "image_url",
           "hummingbird-v1": "cover_image",
           "hummingbird-v2": "poster_image",
@@ -262,6 +282,7 @@ var api_data = {
         {
           "name": "Cover image URL",
           "taiga": "resource",
+          "anilist": "bannerImage",
           "hummingbird-v1": "",
           "hummingbird-v2": "cover_image",
           "kitsu": "coverImage",
@@ -277,6 +298,7 @@ var api_data = {
         {
           "name": "Title (romaji)",
           "taiga": "title",
+          "anilist": "title/romaji",
           "herro": "title, series_title",
           "hummingbird-v1": "title",
           "hummingbird-v2": "romaji",
@@ -286,6 +308,7 @@ var api_data = {
         {
           "name": "Title (en)",
           "taiga": "alternative",
+          "anilist": "title/english",
           "herro": "title_english",
           "hummingbird-v1": "alternate_title",
           "hummingbird-v2": "english",
@@ -295,6 +318,7 @@ var api_data = {
         {
           "name": "Title (ja)",
           "taiga": "alternative",
+          "anilist": "title/native",
           "herro": "title_japanese",
           "hummingbird-v1": "",
           "hummingbird-v2": "japanese",
@@ -304,6 +328,7 @@ var api_data = {
         {
           "name": "Alternative titles",
           "taiga": "alternative",
+          "anilist": "synonyms",
           "herro": "title_aka",
           "hummingbird-v1": "",
           "hummingbird-v2": "",
@@ -313,6 +338,7 @@ var api_data = {
         {
           "name": "Description",
           "taiga": "description",
+          "anilist": "description",
           "herro": "plot",
           "hummingbird-v1": "synopsis",
           "hummingbird-v2": "synopsis",
@@ -322,6 +348,7 @@ var api_data = {
         {
           "name": "Episode count",
           "taiga": "extent",
+          "anilist": "episodes",
           "herro": "episodes_total, series_total",
           "hummingbird-v1": "episode_count",
           "hummingbird-v2": "episode_count",
@@ -331,6 +358,7 @@ var api_data = {
         {
           "name": "Episode length",
           "taiga": "extent",
+          "anilist": "duration",
           "herro": "episodes_length",
           "hummingbird-v1": "episode_length",
           "hummingbird-v2": "episode_length",
@@ -340,6 +368,7 @@ var api_data = {
         {
           "name": "Airing status",
           "taiga": "status",
+          "anilist": "status",
           "herro": "series_status",
           "hummingbird-v1": "status",
           "kitsu": "status",
@@ -348,6 +377,7 @@ var api_data = {
         {
           "name": "Date started airing",
           "taiga": "date",
+          "anilist": "startDate",
           "herro": "series_start",
           "hummingbird-v1": "started_airing",
           "hummingbird-v2": "started_airing_date",
@@ -357,6 +387,7 @@ var api_data = {
         {
           "name": "Date finished airing",
           "taiga": "date",
+          "anilist": "endDate",
           "herro": "series_end",
           "hummingbird-v1": "finished_airing",
           "hummingbird-v2": "finished_airing_date",
@@ -366,6 +397,7 @@ var api_data = {
         {
           "name": "Type",
           "taiga": "type",
+          "anilist": "type",
           "herro": "series_type",
           "hummingbird-v1": "show_type",
           "hummingbird-v2": "show_type",
@@ -375,6 +407,7 @@ var api_data = {
         {
           "name": "Age rating",
           "taiga": "audience",
+          "anilist": "isAdult",
           "herro": "",
           "hummingbird-v1": "age_rating",
           "hummingbird-v2": "age_rating",
@@ -384,6 +417,7 @@ var api_data = {
         {
           "name": "Genres",
           "taiga": "subject",
+          "anilist": "genres",
           "herro": "genres",
           "hummingbird-v1": "genres",
           "hummingbird-v2": "genres",
@@ -397,6 +431,7 @@ var api_data = {
         {
           "name": "Producers",
           "taiga": "creator",
+          "anilist": "studios",
           "herro": "series_producers",
           "hummingbird-v1": "",
           "hummingbird-v2": "",
@@ -406,6 +441,7 @@ var api_data = {
         {
           "name": "Characters",
           "taiga": "",
+          "anilist": "characters",
           "herro": "characters",
           "hummingbird-v1": "",
           "hummingbird-v2": "",
@@ -415,6 +451,7 @@ var api_data = {
         {
           "name": "Average user rating",
           "taiga": "",
+          "anilist": "averageScore, meanScore",
           "herro": "",
           "hummingbird-v1": "community_rating",
           "hummingbird-v2": "community_rating, bayesian_rating",
@@ -437,6 +474,7 @@ var api_data = {
         {
           "name": "Unique identifier",
           "taiga": null,
+          "anilist": "id",
           "hummingbird-v1": "id",
           "kitsu": "id",
           "myanimelist": {
@@ -447,6 +485,7 @@ var api_data = {
         {
           "name": "Watching status",
           "taiga": "status",
+          "anilist": "status",
           "herro": "status, list_status",
           "hummingbird-v1": "status",
           "kitsu": "status",
@@ -455,6 +494,7 @@ var api_data = {
         {
           "name": "Last watched episode",
           "taiga": "progress",
+          "anilist": "progress",
           "herro": "progress, list_progress",
           "hummingbird-v1": "episodes_watched",
           "kitsu": "progress",
@@ -468,6 +508,7 @@ var api_data = {
         {
           "name": "Rewatching status",
           "taiga": "progress",
+          "anilist": "status",
           "herro": "",
           "hummingbird-v1": "rewatching",
           "kitsu": "reconsuming",
@@ -490,6 +531,7 @@ var api_data = {
         {
           "name": "Times rewatched",
           "taiga": "progress",
+          "anilist": "repeat",
           "herro": "",
           "hummingbird-v1": "rewatched_times",
           "kitsu": "reconsumeCount",
@@ -498,6 +540,7 @@ var api_data = {
         {
           "name": "Date started watching",
           "taiga": "date",
+          "anilist": "startedAt",
           "herro": "",
           "hummingbird-v1": "",
           "kitsu": "startedAt",
@@ -506,6 +549,7 @@ var api_data = {
         {
           "name": "Date finished watching",
           "taiga": "date",
+          "anilist": "completedAt",
           "herro": "",
           "hummingbird-v1": "",
           "kitsu": "finishedAt",
@@ -514,6 +558,7 @@ var api_data = {
         {
           "name": "Last library update",
           "taiga": "modified",
+          "anilist": "updatedAt",
           "herro": "",
           "hummingbird-v1": "last_watched, updated_at",
           "kitsu": "updatedAt",
@@ -522,6 +567,7 @@ var api_data = {
         {
           "name": "Rating",
           "taiga": "",
+          "anilist": "score",
           "herro": "score, list_score",
           "hummingbird-v1": "rating, sane_rating_update",
           "kitsu": "rating",
@@ -538,6 +584,7 @@ var api_data = {
         {
           "name": "Personal notes",
           "taiga": "",
+          "anilist": "notes",
           "herro": "",
           "hummingbird-v1": "notes, notes_present",
           "kitsu": "notes",
@@ -550,6 +597,7 @@ var api_data = {
         {
           "name": "Privacy",
           "taiga": "",
+          "anilist": "private",
           "herro": "",
           "hummingbird-v1": "private, privacy",
           "kitsu": "private",
@@ -558,6 +606,7 @@ var api_data = {
         {
           "name": "Priority",
           "taiga": "",
+          "anilist": "priority",
           "herro": "",
           "hummingbird-v1": "",
           "kitsu": "",
