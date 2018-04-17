@@ -314,6 +314,22 @@
               </div>
               <div class="panel panel-default">
                 <div class="panel-heading">
+                  <a data-toggle="collapse" href="#issue-discord">
+                    <h3 class="panel-title">Discord integration doesn't work.</h3>
+                  </a>
+                </div>
+                <div id="issue-discord" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>This feature requires using the Discord desktop client (i.e. it won't work if you open Discord in a regular web browser).</p>
+                    <p><em>Display currently running game as a status message</em> option at Discord desktop client's <em>App Settings → Games</em> must be enabled. But do not add Taiga as a game, or it will show up when you're not watching anything.</p>
+                    <p>In Taiga, make sure you have <em>Tools → Enable auto sharing</em> and <em>Settings → Sharing → Discord → Update rich presence</em> options enabled.</p>
+                    <p>Note that the delay time at <em>Settings → Recognition</em> affects automatic sharing too.</p>
+                    <p>Rich presence updates may take an additional 15 seconds to appear, due to Discord's rate limit.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
                   <a data-toggle="collapse" href="#issue-twitter">
                     <h3 class="panel-title">Twitter sharing doesn't work.</h3>
                   </a>
