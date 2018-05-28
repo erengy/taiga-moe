@@ -421,7 +421,7 @@ var api_data = {
           "herro": "genres",
           "hummingbird-v1": "genres",
           "hummingbird-v2": "genres",
-          "kitsu": "genres",
+          "kitsu": "categories",
           "myanimelist": {
             "text": "genres",
             "note": "1",
