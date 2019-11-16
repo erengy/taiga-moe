@@ -58,24 +58,14 @@
       <!-- Quotes -->
       <div class="container">
         <div class="row">
+          {% for quote in quotes %}
           <div class="col-lg-4 col-md-4 col-sm-12">
             <blockquote>
-              <p>I-it's not like Taiga crashed f-for you or anything!</p>
-              <small><span class="glyphicon glyphicon-user"></span> cyruz</small>
+              <p>{{ quote['text'] }}</p>
+              <small><span class="glyphicon glyphicon-user"></span> {{ quote['author'] }}</small>
             </blockquote>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <blockquote>
-              <p>Taiga is damn sexy. And the code? It's so clean! Even though it's C++!</p>
-              <small><span class="glyphicon glyphicon-user"></span> rr-</small>
-            </blockquote>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <blockquote>
-              <p>Taiga is generally cold and treacherous.</p>
-              <small><span class="glyphicon glyphicon-user"></span> saka</small>
-            </blockquote>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
