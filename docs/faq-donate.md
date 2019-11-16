@@ -1,0 +1,3 @@
+Since 2008, Taiga has been developed and maintained by [a single person](https://erengy.com/ "erengy"), for the most part. While getting paid for his efforts would provide some motivation, he'd very much appreciate it if you spent the money on a better cause.
+
+If you'd like to donate to Taiga, please consider saving the life of a real tiger instead. We suggest supporting non-profit organizations such as [WildCats Conservation Alliance](https://conservewildcats.org/) and [Big Cat Rescue](https://bigcatrescue.org/). [Let us know](https://github.com/erengy/taiga/issues/89) if you have any suggestions in this regard.

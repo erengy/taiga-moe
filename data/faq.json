@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Which platforms does Taiga run on?",
+    "slug": "faq-platforms"
+  },
+  {
+    "title": "Will you support other services?",
+    "slug": "faq-services"
+  },
+  {
+    "title": "Why can't Taiga synchronize between services?",
+    "slug": "faq-services-sync"
+  },
+  {
+    "title": "How about manga?",
+    "slug": "faq-manga"
+  },
+  {
+    "title": "Could you add a feature that displays airing times of TV series?",
+    "slug": "faq-airing"
+  },
+  {
+    "title": "Could you add support for other streaming sites?",
+    "slug": "faq-stream"
+  },
+  {
+    "title": "Any tips on the user interface?",
+    "slug": "faq-ui"
+  },
+  {
+    "title": "How can I donate to Taiga?",
+    "slug": "faq-donate"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Settings or other data cannot be saved.",
+    "slug": "issue-settings"
+  },
+  {
+    "title": "Discord integration doesn't work.",
+    "slug": "issue-discord"
+  },
+  {
+    "title": "Twitter sharing doesn't work.",
+    "slug": "issue-twitter"
+  }
+]
