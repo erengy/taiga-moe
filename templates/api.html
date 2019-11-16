@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Comparison of Anime Library APIs{% endblock %}
+{% block description %}This page aims to draw a comperative picture of Hummingbird, Kitsu and MyAnimeList APIs.{% endblock %}
+{% block body_class %}page-api{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="https://taiga.moe">Home</a></li>
+        <li class="active">Comparison of Anime Library APIs</li>
+      </ol>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Comparison of Anime Library APIs</h1>
+        <p>This page aims to draw a comperative picture of <a href="https://anilist.co">AniList</a>, <a href="https://kitsu.io">Kitsu</a> and <a href="https://myanimelist.net">MyAnimeList</a> APIs. It was first put together in order to aid the development of Taiga, but hopefully it will also help other developers and serve as an indicator of each API's shortcomings.</p>
+        <p>A couple of things to note before venturing forth:</p>
+        <ul>
+          <li>Some methods use different names to refer to the same value (e.g. <code>title</code> and <code>series_title</code>).</li>
+          <li>If an API is missing a value that others provide, it's marked as <code>n/a</code>. If the data is valuable and should be included in the API, it's <span class="text-danger">red</span>; otherwise it's <span class="text-muted">gray</span>.</li>
+        </ul>
+        <p>For more information on each API, please refer to their official documents:</p>
+        <ul>
+          <li>AniList: <a href="https://anilist.gitbooks.io/anilist-apiv2-docs/">API documentation</a></li>
+          <li>Kitsu: <a href="https://kitsu.docs.apiary.io">API documentation</a></li>
+          <li>MyAnimeList: <a href="https://myanimelist.net/modules.php?go=api">API documentation</a>, <a href="https://myanimelist.net/clubs.php?cid=13727">Club page</a></li>
+        </ul>
+        <h2>Technical details</h2>
+        <div id="table-api-details" class="table-responsive">
+          <table class="table table-condensed table-hover">
+            <thead/>
+            <tbody/>
+          </table>
+        </div>
+        <h2>Available methods</h2>
+        <div id="table-api-methods" class="table-responsive">
+          <table class="table table-condensed table-hover">
+            <thead/>
+            <tbody/>
+          </table>
+        </div>
+        <h2>Metadata terms</h2>
+        <div id="table-api-metadata" class="table-responsive">
+          <table class="table table-condensed table-hover">
+            <thead/>
+            <tbody/>
+          </table>
+        </div>
+        <h2>Library terms</h2>
+        <div id="table-api-library" class="table-responsive">
+          <table class="table table-condensed table-hover">
+            <thead/>
+            <tbody/>
+          </table>
+        </div>
+        <div class="footnote well">
+          <p>Last update was made on <abbr title="February 14th, 2018, 13:30">2018-02-14</abbr>. <a href="https://github.com/erengy/taiga-moe">Let us know</a> if you find a mistake or would like to contribute in any other way.</p>
+          <p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Latest Build of Taiga{% endblock %}
+{% block description %}This build may include unstable features.{% endblock %}
+{% block body_class %}page-latest{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="https://taiga.moe">Home</a></li>
+        <li class="active">Latest Build of Taiga</li>
+      </ol>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <img class="taiga-icon" src="assets/img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
+      </div>
+      <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+        <h1>Latest Build of Taiga</h1>
+        <p>Please read before downloading:</p>
+        <ul>
+          <li>This build may include unstable features. It is provided for testing, not for daily use.</li>
+          <li>Before doing anything, close Taiga and take a backup of your installation directory (<code>%AppData%\Taiga</code> by default).</li>
+          <li>This is not an installer. You need to copy the file into your installation directory, replacing the old <code>Taiga.exe</code>.</li>
+        </ul>
+        <a class="btn btn-primary btn-md btn-download" href="/latest.php"><span class="glyphicon glyphicon-download-alt"></span> Download <span class="version">Taiga.exe</span></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
