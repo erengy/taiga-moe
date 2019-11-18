@@ -30,6 +30,7 @@ env = Environment(
 pages = ['api', 'index', 'latest']
 
 quotes = load_data('quotes')
+screenshots = load_data('screenshots')
 support = {
     'faq': load_support_data('faq'),
     'issues': load_support_data('issues'),
@@ -39,5 +40,5 @@ version = datetime.now().strftime('%Y%m%d%H%M%S')
 
 for name in pages:
     template = env.get_template(f'{name}.html')
-    html = template.render(quotes=quotes, support=support, version=version)
+    html = template.render(quotes=quotes, screenshots=screenshots, support=support, version=version)
     save_html(html, name)

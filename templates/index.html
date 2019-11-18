@@ -46,18 +46,13 @@
       <div class="bg-light mb-5 py-5">
         <div class="container">
           <div class="row">
-            {%- set screnshots = [
-                  ('Da8RYVo', 'Anime List', 'Manage your anime library'),
-                  ('jA8fmqx', 'Now Playing', 'Keep track of watched episodes'),
-                  ('lIlYioj', 'Seasons', 'Browse anime seasons'),
-                ] -%}
-            {%- for id, title, caption in screnshots %}
+            {%- for item in screenshots %}
             <div class="col-12 col-md-4">
               <figure class="figure mb-3 mb-md-0">
-                <a href="https://i.imgur.com/{{ id }}.png" data-lightbox="screenshot" data-title="{{ title }}">
-                  <img class="figure-img img-fluid img-thumbnail" src="https://i.imgur.com/{{ id }}.png" alt="{{ title }}">
+                <a href="https://i.imgur.com/{{ item['id'] }}.png" data-lightbox="screenshot" data-title="{{ item['title'] }}">
+                  <img class="figure-img img-fluid img-thumbnail" src="https://i.imgur.com/{{ item['id'] }}.png" alt="{{ item['title'] }}">
                 </a>
-                <figcaption class="figure-caption text-center">{{ caption }}</figcaption>
+                <figcaption class="figure-caption text-center">{{ item['caption'] }}</figcaption>
               </figure>
             </div>
             {%- endfor %}
