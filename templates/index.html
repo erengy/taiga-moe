@@ -7,50 +7,60 @@
 {% block content %}
   <!-- Navigation -->
   <div class="container">
-    <ul id="main-tab" class="nav nav-tabs">
-      <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-      <li><a href="#features" data-toggle="tab">Features</a></li>
-      <li><a href="#support" data-toggle="tab">Support</a></li>
+    <ul id="main-tab" class="nav nav-tabs mb-4" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="features-tab" data-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="support-tab" data-toggle="tab" href="#support" role="tab" aria-controls="support" aria-selected="false">Support</a>
+      </li>
     </ul>
   </div>
 
   <div class="tab-content">
-
     <!-- Home page -->
-    <div class="tab-pane fade in active" id="home">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <!-- Main -->
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <img class="taiga-icon" src="assets/img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <h2>Taiga makes life easier for anime enthusiasts</h2>
-            <p>Taiga is an open-source desktop application for Windows. It automatically detects the anime videos you watch on your computer and synchronizes your progress with online services. It helps you manage your anime library, discover new series, share watched episodes and download new ones.</p>
-            <a class="btn btn-primary btn-lg btn-download" href="/download.php" title="~1MB — Works on Windows Vista and above"><span class="glyphicon glyphicon-download-alt"></span> Download <span class="version">v1.3</span></a>
-            <div id="download-details">
-              <small>Requires an <a href="https://anilist.co">AniList</a> or <a href="https://kitsu.io">Kitsu</a> account. Source code is available at <a href="https://github.com/erengy/taiga">GitHub</a>.</small>
+      <div class="mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-4 col-lg-3">
+              <img class="taiga-icon img-fluid" src="assets/img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
+            </div>
+            <div class="col-12 col-sm-8">
+              <h1 class="h2 mt-2">Taiga makes life easier for anime enthusiasts</h1>
+              <p>Taiga is an open-source desktop application for Windows. It automatically detects the anime videos you watch on your computer and synchronizes your progress with online services. It helps you manage your anime library, discover new series, share watched episodes and download new ones.</p>
+              <a class="btn btn-lg btn-primary btn-download mb-3" href="/download.php" title="~1MB — Works on Windows Vista and above">
+                <span class="fas fa-download"></span> Download <span class="version">v1.3</span>
+              </a>
+              <p class="small mb-0">Requires an <a href="https://anilist.co/">AniList</a> or <a href="https://kitsu.io/">Kitsu</a> account. Source code is available at <a href="https://github.com/erengy/taiga">GitHub</a>.</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Screenshots -->
-      <div class="inset">
+      <div class="bg-light mb-5 py-5">
         <div class="container">
           <div class="row">
-            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a class="thumbnail" href="https://i.imgur.com/Da8RYVo.png" data-lightbox="screenshot" data-title="Anime List"><img src="https://i.imgur.com/Da8RYVo.png" alt="Anime List"></a>
-              <small><span class="hidden glyphicon glyphicon-th-list"></span> Manage your anime library</small>
+            {%- set screnshots = [
+                  ('Da8RYVo', 'Anime List', 'Manage your anime library'),
+                  ('jA8fmqx', 'Now Playing', 'Keep track of watched episodes'),
+                  ('lIlYioj', 'Seasons', 'Browse anime seasons'),
+                ] -%}
+            {%- for id, title, caption in screnshots %}
+            <div class="col-12 col-md-4">
+              <figure class="figure mb-3 mb-md-0">
+                <a href="https://i.imgur.com/{{ id }}.png" data-lightbox="screenshot" data-title="{{ title }}">
+                  <img class="figure-img img-fluid img-thumbnail" src="https://i.imgur.com/{{ id }}.png" alt="{{ title }}">
+                </a>
+                <figcaption class="figure-caption text-center">{{ caption }}</figcaption>
+              </figure>
             </div>
-            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a class="thumbnail" href="https://i.imgur.com/jA8fmqx.png" data-lightbox="screenshot" data-title="Now Playing"><img src="https://i.imgur.com/jA8fmqx.png" alt="Now Playing"></a>
-              <small><span class="hidden glyphicon glyphicon-film"></span> Keep track of watched episodes</small>
-            </div>
-            <div class="screenshot col-lg-4 col-md-4 col-sm-12 col-xs-12">
-              <a class="thumbnail" href="https://i.imgur.com/lIlYioj.png" data-lightbox="screenshot" data-title="Seasons"><img src="https://i.imgur.com/lIlYioj.png" alt="Seasons"></a>
-              <small><span class="hidden glyphicon glyphicon-calendar"></span> Browse anime seasons</small>
-            </div>
+            {%- endfor %}
           </div>
         </div>
       </div>
@@ -58,91 +68,93 @@
       <!-- Quotes -->
       <div class="container">
         <div class="row">
-          {% for quote in quotes %}
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <blockquote>
-              <p>{{ quote['text'] }}</p>
-              <small><span class="glyphicon glyphicon-user"></span> {{ quote['author'] }}</small>
+          {%- for quote in quotes %}
+          <div class="col-12 col-md-4">
+            <blockquote class="small">
+              <p class="mb-1">{{ quote['text'] }}</p>
+              <cite class="text-muted"><i class="fas fa-user"></i> {{ quote['author'] }}</cite>
             </blockquote>
           </div>
-          {% endfor %}
+          {%- endfor %}
         </div>
       </div>
     </div>
 
     <!-- Features page -->
-    <div class="tab-pane fade" id="features">
+    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
       <div class="container">
-        <h3>It doesn't do everything, but it has some neat features</h3>
-        <div id="feature-list" class="row">
-          <div class="col-lg-10">
-            <div class="media">
-              <h2 class="media-left glyphicon glyphicon-film"></h2>
-              <div class="media-body">
-                <h4 class="media-heading">Automatic media detection</h4>
-                <p>Taiga can detect the media player of your choice, identify the files you're watching and update your list automatically. It works for streaming services too! <a data-toggle="collapse" href="#feature-more-media"><small>Learn more</small></a></p>
-                <div id="feature-more-media" class="collapse">
-                  <div class="well">
-                    <p>Taiga supports dozens of <a href="https://github.com/erengy/anisthesia/issues/1">media players</a> including MPC-HC, mpv, PotPlayer, VLC and Kodi.</p>
-                    <p>If you prefer watching anime via an official streaming service, that's okay too. Taiga supports AnimeLab, Anime Digital Network, Anime News Network, Crunchyroll, Funimation, HIDIVE, Plex Web App, Veoh, VIZ, VRV, Wakanim, Yahoo View and YouTube. This feature requires you to use one of the supported <a href="https://github.com/erengy/anisthesia/issues/2">web browsers</a>; namely Google Chrome, Mozilla Firefox or Opera.</p>
+        <h2 class="h3 mb-4">It doesn't do everything, but it has some neat features</h2>
+        <div class="row">
+          <div class="col-12 col-lg-10">
+            <ul class="list-unstyled">
+              <li class="media">
+                <i class="fas fa-2x fa-film text-primary mr-3"></i>
+                <div class="media-body">
+                  <h4>Automatic media detection</h4>
+                  <p>Taiga can detect the media player of your choice, identify the files you're watching and update your list automatically. It works for streaming services too! <a data-toggle="collapse" href="#feature-more-media"><small>Learn more</small></a></p>
+                  <div id="feature-more-media" class="collapse">
+                    <div class="card bg-light small mb-3 p-3">
+                      <p>Taiga supports dozens of <a href="https://github.com/erengy/anisthesia/issues/1">media players</a> including MPC-HC, mpv, PotPlayer, VLC and Kodi.</p>
+                      <p class="mb-0">If you prefer watching anime via an official streaming service, that's okay too. Taiga supports AnimeLab, Anime Digital Network, Anime News Network, Crunchyroll, Funimation, HIDIVE, Plex Web App, Veoh, VIZ, VRV, Wakanim, Yahoo View and YouTube. This feature requires you to use one of the supported <a href="https://github.com/erengy/anisthesia/issues/2">web browsers</a>; namely Google Chrome, Mozilla Firefox or Opera.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="media">
-              <h2 class="media-left glyphicon glyphicon-calendar"></h2>
-              <div class="media-body">
-                <h4 class="media-heading">Interactive season charts</h4>
-                <p>Taiga's season charts are dynamic and up-to-date. You can sort them by global score or filter them by genres, among other things. And it takes only a few clicks to add an anime to your library. <a data-toggle="collapse" href="#feature-more-seasons"><small>Learn more</small></a></p>
-                <div id="feature-more-seasons" class="collapse">
-                  <div class="well">
-                    <p>All anime seasons since 2011 are included, and the data is regularly updated as seasons come and go. You can see which series in a season are the most popular, and filter them down to your interests.</p>
+              </li>
+              <li class="media">
+                <i class="fas fa-2x fa-calendar-alt text-primary mr-3"></i>
+                <div class="media-body">
+                  <h4>Interactive season charts</h4>
+                  <p>Taiga's season charts are dynamic and up-to-date. You can sort them by global score or filter them by genres, among other things. And it takes only a few clicks to add an anime to your library. <a data-toggle="collapse" href="#feature-more-seasons"><small>Learn more</small></a></p>
+                  <div id="feature-more-seasons" class="collapse">
+                    <div class="card bg-light small mb-3 p-3">
+                      <p class="mb-0">All anime seasons since 2011 are included, and the data is regularly updated as seasons come and go. You can see which series in a season are the most popular, and filter them down to your interests.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="media">
-              <h2 class="media-left glyphicon glyphicon-share"></h2>
-              <div class="media-body">
-                <h4 class="media-heading">Share with other people</h4>
-                <p>Share the current episode you're watching by updating your Discord rich presence or Skype mood message, posting a tweet to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL. <a data-toggle="collapse" href="#feature-more-sharing"><small>Learn more</small></a></p>
-                <div id="feature-more-sharing" class="collapse">
-                  <div class="well">
-                    <p>One way to use HTTP requests is to update scripted forum signatures. For all the sharing methods, you can customize the text format to your needs.</p>
+              </li>
+              <li class="media">
+                <i class="fas fa-2x fa-share-alt text-primary mr-3"></i>
+                <div class="media-body">
+                  <h4>Share with other people</h4>
+                  <p>Share the current episode you're watching by updating your Discord rich presence or Skype mood message, posting a tweet to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL. <a data-toggle="collapse" href="#feature-more-sharing"><small>Learn more</small></a></p>
+                  <div id="feature-more-sharing" class="collapse">
+                    <div class="card bg-light small mb-3 p-3">
+                      <p class="mb-0">One way to use HTTP requests is to update scripted forum signatures. For all the sharing methods, you can customize the text format to your needs.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="media">
-              <h2 class="media-left glyphicon glyphicon-save"></h2>
-              <div class="media-body">
-                <h4 class="media-heading">Download new episodes</h4>
-                <p>Taiga is able to check RSS feeds for torrent releases. You can either manually choose which files you'd like to download, or fully automate the process by setting up smart filters. <a data-toggle="collapse" href="#feature-more-torrents"><small>Learn more</small></a></p>
-                <div id="feature-more-torrents" class="collapse">
-                  <div class="well">
-                    <p>Some popular choices such as Nyaa and Tokyo Toshokan are available by default, but you can set the source to any RSS feed you like.</p>
+              </li>
+              <li class="media">
+                <i class="fas fa-2x fa-file-download text-primary mr-3"></i>
+                <div class="media-body">
+                  <h4>Download new episodes</h4>
+                  <p>Taiga is able to check RSS feeds for torrent releases. You can either manually choose which files you'd like to download, or fully automate the process by setting up smart filters. <a data-toggle="collapse" href="#feature-more-torrents"><small>Learn more</small></a></p>
+                  <div id="feature-more-torrents" class="collapse">
+                    <div class="card bg-light small mb-3 p-3">
+                      <p class="mb-0">Some popular choices such as Nyaa and Tokyo Toshokan are available by default, but you can set the source to any RSS feed you like.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <h3>And it's all packed up into a tiny file that fits into your palmtop! <span class="text-muted">ヽ(ﾟ〇ﾟ)ﾉ</span></h3>
+        <div class="h3">And it's all packed up into a tiny file that fits into your palmtop! <span class="text-muted">ヽ(ﾟ〇ﾟ)ﾉ</span></div>
       </div>
     </div>
 
     <!-- Support page -->
-    <div class="tab-pane fade" id="support">
+    <div class="tab-pane fade" id="support" role="tabpanel" aria-labelledby="support-tab">
       <div class="container">
-        <div class="alert alert-info">
-          <p>
+        <div class="alert alert-primary mb-4">
+          <p class="mb-2">
             Visit the
             <a href="https://anilist.co/forum/thread/2846" class="alert-link">AniList thread</a>,
             <a href="https://kitsu.io/groups/taiga" class="alert-link">Kitsu group</a> or
             <a href="https://github.com/erengy/taiga/issues" class="alert-link">GitHub page</a>
             to report issues and to request new features.
           </p>
-          <p>
+          <p class="mb-0">
             You can also join our
             <a href="https://discord.gg/yeGNktZ" class="alert-link">Discord server</a> or follow the
             <a href="https://twitter.com/taigaapp" class="alert-link">Twitter account</a>
@@ -151,60 +163,53 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <h3>Frequently Asked Questions</h3>
-            <div class="panel-group">
-              {% for item in support['faq'] %}
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                    <h3 class="panel-title">{{ item['title'] }}</h3>
-                  </a>
-                </div>
-                <div id="{{ item['slug'] }}" class="panel-collapse collapse">
-                  <div class="panel-body">{{ item['body'] | safe }}</div>
-                </div>
+          <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+            <h3 class="h4">Frequently Asked Questions</h3>
+            {% for item in support['faq'] %}
+            <div class="card mb-1">
+              <div class="card-header">
+                <a data-toggle="collapse" href="#{{ item['slug'] }}">
+                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
+                </a>
               </div>
-              {% endfor %}
+              <div id="{{ item['slug'] }}" class="collapse">
+                <div class="card-body">{{ item['body'] | safe }}</div>
+              </div>
             </div>
+            {% endfor %}
           </div>
 
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <h3>Common Issues</h3>
-            <div class="panel-group">
-              {% for item in support['issues'] %}
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                    <h3 class="panel-title">{{ item['title'] }}</h3>
-                  </a>
-                </div>
-                <div id="{{ item['slug'] }}" class="panel-collapse collapse">
-                  <div class="panel-body">{{ item['body'] | safe }}</div>
-                </div>
+          <div class="col-12 col-lg-6">
+            <h3 class="h4">Common Issues</h3>
+            {% for item in support['issues'] %}
+            <div class="card mb-1">
+              <div class="card-header">
+                <a data-toggle="collapse" href="#{{ item['slug'] }}">
+                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
+                </a>
               </div>
-              {% endfor %}
+              <div id="{{ item['slug'] }}" class="collapse">
+                <div class="card-body">{{ item['body'] | safe }}</div>
+              </div>
             </div>
+            {% endfor %}
 
-            <h3>How It Works</h3>
-            <div class="panel-group">
-              {% for item in support['how-it-works'] %}
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                    <h3 class="panel-title">{{ item['title'] }}</h3>
-                  </a>
-                </div>
-                <div id="{{ item['slug'] }}" class="panel-collapse collapse">
-                  <div class="panel-body">{{ item['body'] | safe }}</div>
-                </div>
+            <h3 class="h4 mt-3">How It Works</h3>
+            {% for item in support['how-it-works'] %}
+            <div class="card mb-1">
+              <div class="card-header">
+                <a data-toggle="collapse" href="#{{ item['slug'] }}">
+                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
+                </a>
               </div>
-              {% endfor %}
+              <div id="{{ item['slug'] }}" class="collapse">
+                <div class="card-body">{{ item['body'] | safe }}</div>
+              </div>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
-
   </div>
 {% endblock %}

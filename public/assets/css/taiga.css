@@ -1,106 +1,61 @@
 body {
   background-color: #fdfdfd;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-abbr {
-  text-decoration: none;
 }
 
 blockquote {
-  font-size: 14px;
+  border-left: 5px solid #eee;
+  padding: 10px 20px;
+}
+blockquote cite::before {
+  content: "— ";
 }
 
 code {
   background: #f0f0f0;
+  border-radius: 4px;
   color: inherit;
-}
-
-img {
-  max-width: 100%;
+  font-size: 90%;
+  padding: 2px 4px;
 }
 
 kbd {
   background-color: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
   color: #666;
+  font-size: 90%;
+  padding: 2px 4px;
 }
 
-
-#main-tab {
-  margin-bottom: 20px;
+pre {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 13px;
+  padding: 9.5px;
 }
 
+.bg-light {
+  background-color: #eee !important;
+}
+
+.btn-download .version {
+  color: #adf;
+}
+
+.card-body p:last-child,
+.card-body ol:last-child,
+.card-body ul:last-child {
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: #999 !important;
+}
 
 @media (min-width: 1200px) {
   .taiga-icon {
     height: 225px;
   }
-}
-
-.btn-download {
-  margin: 10px 10px 10px 0;
-}
-.btn-download .version {
-  color: #adf;
-}
-
-
-.inset {
-  background: #eee;
-  margin: 40px 0;
-  padding: 40px 0;
-}
-
-.screenshot {
-  text-align: center;
-}
-@media (max-width: 991px) {
-  .screenshot:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
-}
-.screenshot .thumbnail {
-  margin-bottom: 5px;
-}
-
-
-#feature-list {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.media .glyphicon {
-  color: #428bca;
-}
-
-.well {
-  font-size: 14px;
-  padding-bottom: 9px;
-}
-
-.text-muted {
-  color: #999;
-}
-
-
-.page-index .alert-info,
-.page-index .panel-group {
-  margin-bottom: 0;
-}
-
-
-.page-api h1,
-.page-latest h1 {
-  margin-top: 0;
-}
-
-.page-api h2 {
-  margin-top: 30px;
-}
-
-.page-api .footnote {
-  margin-top: 40px;
 }
