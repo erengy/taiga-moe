@@ -683,9 +683,9 @@ function printValue(data, type) {
 
   if (type == 'feature-list') {
     if (value.text == true) {
-      value.text = '<span class="text-success glyphicon glyphicon-ok"></span>';
+      value.text = '<span class="text-success fas fa-check fa-fw"></span>';
     } else if (value.text == false) {
-      value.text = '<span class="text-danger glyphicon glyphicon-remove"></span>';
+      value.text = '<span class="text-danger fas fa-times fa-fw"></span>';
     } else {
       value.text = 'n/a';
       value.required = false;
