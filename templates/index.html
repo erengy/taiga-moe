@@ -82,55 +82,25 @@
         <div class="row">
           <div class="col-12 col-lg-10">
             <ul class="list-unstyled">
+              {%- for feature in features %}
               <li class="media">
-                <i class="fas fa-2x fa-film text-primary mr-3"></i>
+                <i class="fas fa-2x {{ feature['icon'] }} text-primary mr-3"></i>
                 <div class="media-body">
-                  <h4>Automatic media detection</h4>
-                  <p>Taiga can detect the media player of your choice, identify the files you're watching and update your list automatically. It works for streaming services too! <a data-toggle="collapse" href="#feature-more-media"><small>Learn more</small></a></p>
-                  <div id="feature-more-media" class="collapse">
-                    <div class="card bg-light small mb-3 p-3">
-                      <p>Taiga supports dozens of <a href="https://github.com/erengy/anisthesia/issues/1">media players</a> including MPC-HC, mpv, PotPlayer, VLC and Kodi.</p>
-                      <p class="mb-0">If you prefer watching anime via an official streaming service, that's okay too. Taiga supports AnimeLab, Anime Digital Network, Anime News Network, Crunchyroll, Funimation, HIDIVE, Plex Web App, Veoh, VIZ, VRV, Wakanim, Yahoo View and YouTube. This feature requires you to use one of the supported <a href="https://github.com/erengy/anisthesia/issues/2">web browsers</a>; namely Google Chrome, Mozilla Firefox or Opera.</p>
+                  <h3 class="h4">{{ feature['title'] }}</h3>
+                  <p>
+                    {{ feature['content'] | safe }}
+                    <a class="d-inline-block small" data-toggle="collapse" href="#{{ feature['slug'] }}-more">Learn more</a>
+                  </p>
+                  <div id="{{ feature['slug'] }}-more" class="collapse">
+                    <div class="card bg-light mb-3">
+                      <div class="card-body small p-3">
+                        {{ feature['body'] | safe }}
+                      </div>
                     </div>
                   </div>
                 </div>
               </li>
-              <li class="media">
-                <i class="fas fa-2x fa-calendar-alt text-primary mr-3"></i>
-                <div class="media-body">
-                  <h4>Interactive season charts</h4>
-                  <p>Taiga's season charts are dynamic and up-to-date. You can sort them by global score or filter them by genres, among other things. And it takes only a few clicks to add an anime to your library. <a data-toggle="collapse" href="#feature-more-seasons"><small>Learn more</small></a></p>
-                  <div id="feature-more-seasons" class="collapse">
-                    <div class="card bg-light small mb-3 p-3">
-                      <p class="mb-0">All anime seasons since 2011 are included, and the data is regularly updated as seasons come and go. You can see which series in a season are the most popular, and filter them down to your interests.</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="media">
-                <i class="fas fa-2x fa-share-alt text-primary mr-3"></i>
-                <div class="media-body">
-                  <h4>Share with other people</h4>
-                  <p>Share the current episode you're watching by updating your Discord rich presence or Skype mood message, posting a tweet to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL. <a data-toggle="collapse" href="#feature-more-sharing"><small>Learn more</small></a></p>
-                  <div id="feature-more-sharing" class="collapse">
-                    <div class="card bg-light small mb-3 p-3">
-                      <p class="mb-0">One way to use HTTP requests is to update scripted forum signatures. For all the sharing methods, you can customize the text format to your needs.</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="media">
-                <i class="fas fa-2x fa-file-download text-primary mr-3"></i>
-                <div class="media-body">
-                  <h4>Download new episodes</h4>
-                  <p>Taiga is able to check RSS feeds for torrent releases. You can either manually choose which files you'd like to download, or fully automate the process by setting up smart filters. <a data-toggle="collapse" href="#feature-more-torrents"><small>Learn more</small></a></p>
-                  <div id="feature-more-torrents" class="collapse">
-                    <div class="card bg-light small mb-3 p-3">
-                      <p class="mb-0">Some popular choices such as Nyaa and Tokyo Toshokan are available by default, but you can set the source to any RSS feed you like.</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              {%- endfor %}
             </ul>
           </div>
         </div>

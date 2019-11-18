@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Automatic media detection",
+    "slug": "feature-media",
+    "icon": "fa-film",
+    "content": "Taiga can detect the media player of your choice, identify the files you're watching and update your list automatically. It works for streaming services too!"
+  },
+  {
+    "title": "Interactive season charts",
+    "slug": "feature-seasons",
+    "icon": "fa-calendar-alt",
+    "content": "Taiga's season charts are dynamic and up-to-date. You can sort them by global score or filter them by genres, among other things. And it takes only a few clicks to add an anime to your library."
+  },
+  {
+    "title": "Share with other people",
+    "slug": "feature-sharing",
+    "icon": "fa-share-alt",
+    "content": "Share the current episode you're watching by updating your Discord rich presence or Skype mood message, posting a tweet to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL."
+  },
+  {
+    "title": "Download new episodes",
+    "slug": "feature-torrents",
+    "icon": "fa-file-download",
+    "content": "Taiga is able to check RSS feeds for torrent releases. You can either manually choose which files you'd like to download, or fully automate the process by setting up smart filters."
+  }
+]

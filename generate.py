@@ -12,7 +12,7 @@ def load_html_content(slug):
     with open(f'docs/{slug}.md', 'r', encoding='utf-8') as file:
         return markdown(file.read(), output_format='html5', tab_length=2)
 
-def load_support_data(slug):
+def load_docs(slug):
     data = load_data(slug)
     for item in data:
         item['body'] = load_html_content(item['slug'])
@@ -29,16 +29,21 @@ env = Environment(
 
 pages = ['api', 'index', 'latest']
 
+features = load_docs('features')
 quotes = load_data('quotes')
 screenshots = load_data('screenshots')
 support = {
-    'faq': load_support_data('faq'),
-    'issues': load_support_data('issues'),
-    'how-it-works': load_support_data('how-it-works'),
+    'faq': load_docs('faq'),
+    'issues': load_docs('issues'),
+    'how-it-works': load_docs('how-it-works'),
 }
 version = datetime.now().strftime('%Y%m%d%H%M%S')
 
 for name in pages:
     template = env.get_template(f'{name}.html')
-    html = template.render(quotes=quotes, screenshots=screenshots, support=support, version=version)
+    html = template.render(features=features,
+                           quotes=quotes,
+                           screenshots=screenshots,
+                           support=support,
+                           version=version)
     save_html(html, name)
