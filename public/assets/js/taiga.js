@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  $('a[href="' + window.location.hash + '"]').click();
+  if (window.location.hash) {
+    $('a[data-toggle="tab"][href="' + window.location.hash + '"]').click();
+  }
 });
