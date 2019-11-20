@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{% block title %}{% endblock %}</title>
-  <meta name="description" content="{% block description %}{% endblock %}">
+  <title>{{ self.title() }}</title>
+  <meta name="description" content="{{ self.description() }}">
   <meta name="author" content="erengy">
-
-  <meta property="og:description" content="An open-source desktop application that helps you manage your anime library, discover new series, share watched episodes and download new ones.">
+  <meta property="og:description" content="{{ self.description() }}">
   <meta property="og:image" content="https://taiga.moe/assets/img/icon/taiga_256px.png">
-  <meta property="og:title" content="Taiga">
+  <meta property="og:title" content="{{ self.title() }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://taiga.moe">
   <meta name="twitter:card" content="summary">
@@ -17,7 +16,6 @@
 
   <link rel="canonical" href="https://taiga.moe">
   <link rel="shortcut icon" href="assets/img/icon/taiga_16px.png">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" integrity="sha256-tBxlolRHP9uMsEFKVk+hk//ekOlXOixLKvye5W2WR5c=" crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/css/taiga.css?v={{ version }}">
