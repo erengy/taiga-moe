@@ -43,7 +43,8 @@ pre {
 
 .card-body p:last-child,
 .card-body ol:last-child,
-.card-body ul:last-child {
+.card-body ul:last-child,
+.card-body pre:last-child {
   margin-bottom: 0;
 }
 

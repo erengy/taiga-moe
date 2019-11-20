@@ -90,7 +90,7 @@
                   <h3 class="h4">{{ feature['title'] }}</h3>
                   <p>
                     {{ feature['content'] | safe }}
-                    <a class="d-inline-block small" data-toggle="collapse" href="#{{ feature['slug'] }}-more">Learn more</a>
+                    <a class="d-inline-block small" data-toggle="collapse" href="#{{ feature['slug'] }}-more" aria-expanded="false" aria-controls="{{ feature['slug'] }}-more">Learn more</a>
                   </p>
                   <div id="{{ feature['slug'] }}-more" class="collapse">
                     <div class="card bg-light mb-3">
@@ -129,50 +129,33 @@
         </div>
 
         <div class="row">
-          <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-            <h3 class="h4">Frequently Asked Questions</h3>
-            {% for item in support['faq'] %}
+          {%- macro support_card(item) %}
             <div class="card mb-1">
-              <div class="card-header">
-                <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
-                </a>
-              </div>
-              <div id="{{ item['slug'] }}" class="collapse">
+              <a id="{{ item['slug'] }}-header" class="card-header collapsed" data-toggle="collapse" href="#{{ item['slug'] }}" aria-expanded="false" aria-controls="{{ item['slug'] }}">
+                <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
+              </a>
+              <div id="{{ item['slug'] }}" class="collapse" aria-labelledby="{{ item['slug'] }}-header">
                 <div class="card-body">{{ item['body'] | safe }}</div>
               </div>
             </div>
-            {% endfor %}
+          {%- endmacro %}
+          <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+            <h3 class="h4">Frequently Asked Questions</h3>
+            {%- for item in support['faq'] %}
+            {{- support_card(item) }}
+            {%- endfor %}
           </div>
 
           <div class="col-12 col-lg-6">
             <h3 class="h4">Common Issues</h3>
-            {% for item in support['issues'] %}
-            <div class="card mb-1">
-              <div class="card-header">
-                <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
-                </a>
-              </div>
-              <div id="{{ item['slug'] }}" class="collapse">
-                <div class="card-body">{{ item['body'] | safe }}</div>
-              </div>
-            </div>
-            {% endfor %}
+            {%- for item in support['issues'] %}
+            {{- support_card(item) }}
+            {%- endfor %}
 
             <h3 class="h4 mt-3">How It Works</h3>
-            {% for item in support['how-it-works'] %}
-            <div class="card mb-1">
-              <div class="card-header">
-                <a data-toggle="collapse" href="#{{ item['slug'] }}">
-                  <h4 class="h6 text-body mb-0">{{ item['title'] }}</h4>
-                </a>
-              </div>
-              <div id="{{ item['slug'] }}" class="collapse">
-                <div class="card-body">{{ item['body'] | safe }}</div>
-              </div>
-            </div>
-            {% endfor %}
+            {%- for item in support['how-it-works'] %}
+            {{- support_card(item) }}
+            {%- endfor %}
           </div>
         </div>
       </div>
