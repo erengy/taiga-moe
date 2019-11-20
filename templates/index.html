@@ -66,9 +66,9 @@
         <div class="row">
           {%- for quote in quotes %}
           <div class="col-12 col-md-4">
-            <blockquote class="small">
-              <p class="mb-1">{{ quote['text'] }}</p>
-              <cite class="text-muted"><i class="fas fa-user"></i> {{ quote['author'] }}</cite>
+            <blockquote>
+              <p class="small mb-1">{{ quote['text'] }}</p>
+              <footer class="blockquote-footer"><i class="fas fa-user"></i> {{ quote['author'] }}</footer>
             </blockquote>
           </div>
           {%- endfor %}

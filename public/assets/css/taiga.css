@@ -4,10 +4,7 @@ body {
 
 blockquote {
   border-left: 5px solid #eee;
-  padding: 10px 20px;
-}
-blockquote cite::before {
-  content: "— ";
+  padding: 0 20px;
 }
 
 code {
