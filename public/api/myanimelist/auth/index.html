@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Taiga - MyAnimeList Authorization</title>
+  <style type="text/css">
+    html, body {
+      height: 100%;
+    }
+    body {
+      background-color: #fff;
+      background: radial-gradient(circle at center, #fff 0%, #f8f8f8 75%, #ebebeb 100%);
+      color: #222;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin: 0;
+    }
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      margin: 1rem 0;
+    }
+    #code {
+      background-color: #eee;
+      border-radius: .5rem;
+      border: 1px solid #ccc;
+      font-family: monospace;
+      font-size: 0.875rem;
+      max-width: 1200px;
+      padding: 1rem;
+      text-align: left;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Taiga - MyAnimeList Authorization</h1>
+    <p>Please copy and paste the following code to Taiga:</p>
+    <div id="code"></div>
+  </main>
+
+  <script>
+    var url = new URL(window.location.href);
+    var code = url.searchParams.get("code");
+    var element = document.getElementById("code");
+    element.innerHTML = code ? code : "Error: Code not found.";
+  </script>
+</body>
+</html>
