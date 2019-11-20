@@ -754,7 +754,7 @@ function populateTables(data) {
     if (notes) {
       html = '<small>';
       for (var j = 0; j < notes.length; j++) {
-        html += '<p><sup>' + (j + 1).toString() + '</sup> ' + notes[j] + '</p>';
+        html += '<p class="mb-1"><sup>' + (j + 1).toString() + '</sup> ' + notes[j] + '</p>';
       }
       html += '</small>';
       $('#' + id).after(html);
