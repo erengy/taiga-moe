@@ -10,7 +10,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="https://taiga.moe/">Taiga</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Latest Build of Taiga</li>
+        <li class="breadcrumb-item active" aria-current="page">{{ self.title() }}</li>
       </ol>
     </nav>
 
@@ -19,7 +19,7 @@
         <img class="taiga-icon img-fluid" src="assets/img/icon/taiga_256px.png" alt="=^.^=" title="Vector art by saka">
       </div>
       <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
-        <h1 class="h2">Latest Build of Taiga</h1>
+        <h1 class="h2 mt-2">{{ self.title() }}</h1>
         <p>Please read before downloading:</p>
         <ul>
           <li>This build may include unstable features. It is provided for testing, not for daily use.</li>
