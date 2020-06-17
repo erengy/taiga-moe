@@ -30,45 +30,23 @@
           <li>MyAnimeList: <a href="https://myanimelist.net/modules.php?go=api">API documentation</a>, <a href="https://myanimelist.net/clubs.php?cid=13727">Club page</a></li>
         </ul>
 
+        {%- set sections = [
+            ('table-api-details', 'Technical details'),
+            ('table-api-methods', 'Available methods'),
+            ('table-api-metadata', 'Metadata terms'),
+            ('table-api-library', 'Library terms'),
+          ] -%}
+        {%- for id, title in sections %}
         <section class="my-5">
-          <h2>Technical details</h2>
-          <div id="table-api-details" class="table-responsive">
+          <h2>{{ title }}</h2>
+          <div id="{{ id }}" class="table-responsive">
             <table class="table table-sm table-hover">
               <thead></thead>
               <tbody></tbody>
             </table>
           </div>
         </section>
-
-        <section class="my-5">
-          <h2>Available methods</h2>
-          <div id="table-api-methods" class="table-responsive">
-            <table class="table table-sm table-hover">
-              <thead></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="my-5">
-          <h2>Metadata terms</h2>
-          <div id="table-api-metadata" class="table-responsive">
-            <table class="table table-sm table-hover">
-              <thead></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="my-5">
-          <h2>Library terms</h2>
-          <div id="table-api-library" class="table-responsive">
-            <table class="table table-sm table-hover">
-              <thead></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </section>
+        {%- endfor %}
 
         <div class="card bg-light small p-3">
           <p class="mb-1">Last update was made on <abbr title="February 14th, 2018, 13:30">2018-02-14</abbr>. <a href="https://github.com/erengy/taiga-moe">Let us know</a> if you find a mistake or would like to contribute in any other way.</p>
