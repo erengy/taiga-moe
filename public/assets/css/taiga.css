@@ -41,6 +41,24 @@ pre {
   color: #adf;
 }
 
+.btn-patreon {
+  background: #ff424d;
+  border-color: #ff424d;
+  color: #fff;
+}
+.btn-patreon:hover {
+  background: #ff1c29;
+  border-color: #ff0f1d;
+  color: #fff;
+}
+.btn-patreon:focus,
+.btn-patreon.focus {
+  background: #ff1c29;
+  border-color: #ff0f1d;
+  box-shadow: 0 0 0 0.2rem rgba(255, 94, 104, 0.5);
+  color: #fff;
+}
+
 .card-body p:last-child,
 .card-body ol:last-child,
 .card-body ul:last-child,

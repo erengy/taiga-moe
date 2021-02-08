@@ -18,6 +18,9 @@
       <li class="nav-item">
         <a class="nav-link" id="support-tab" data-toggle="tab" href="#support" role="tab" aria-controls="support" aria-selected="false">Support</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-danger" id="donate-tab" data-toggle="tab" href="#donate" role="tab" aria-controls="donate" aria-selected="false"><i class="far fa-heart mr-2"></i>Donate</a>
+      </li>
     </ul>
   </div>
 
@@ -159,6 +162,31 @@
             {%- for item in support['how-it-works'] %}
             {{- support_card(item) }}
             {%- endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donate page -->
+    <div class="tab-pane fade" id="donate" role="tabpanel" aria-labelledby="donate-tab">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                <img class="img-fluid" src="assets/img/nyan.png" alt="">
+              </div>
+              <div class="col-12 col-sm-8">
+                <h2 class="h3">Donators</h2>
+                <p>Taiga's development has been supported by the following kind souls:</p>
+                <div class="alert alert-primary mb-4">
+                  <p class="mb-0">There is no one here yet. You can be the first!</p>
+                </div>
+                <a class="btn btn-lg btn-patreon" href="https://www.patreon.com/erengy" rel="external noopener">
+                  <i class="fab fa-patreon mr-2"></i>Become a patron
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
