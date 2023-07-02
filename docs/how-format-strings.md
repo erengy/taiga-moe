@@ -1,4 +1,4 @@
-It's almost the same system that is used by [foobar2000](http://wiki.hydrogenaud.io/index.php?title=Foobar2000:Title_Formatting_Reference) and [Mp3tag](http://help.mp3tag.de/main_scripting.html). The basic idea is as following:
+It's almost the same system that is used by [foobar2000](https://wiki.hydrogenaud.io/index.php?title=Foobar2000:Title_Formatting_Reference) and [Mp3tag](https://docs.mp3tag.de/scripting/). The basic idea is as following:
 
 Variables are replaced by their corresponding values. If you're watching the third episode of [*Toradora!*](https://myanimelist.net/anime/4224/), `%title% - %episode%` will appear as `Toradora! - 3`.
 
