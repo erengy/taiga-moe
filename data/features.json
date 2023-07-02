@@ -15,7 +15,7 @@
     "title": "Share with other people",
     "slug": "feature-sharing",
     "icon": "fa-share-alt",
-    "content": "Share the current episode you're watching by updating your Discord rich presence, posting a tweet to your Twitter account, sending a message to IRC channels, or making an HTTP request to any URL."
+    "content": "Share the current episode you're watching by updating your Discord rich presence, sending a message to IRC channels, or making an HTTP request to any URL."
   },
   {
     "title": "Download new episodes",
