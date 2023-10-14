@@ -20,12 +20,13 @@
       </div>
       <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
         <h1 class="h2 mt-2">{{ self.title() }}</h1>
-        <p>Please read before downloading:</p>
-        <ul class="pl-3">
-          <li>This build may include unstable features. It is provided for testing, not for daily use.</li>
-          <li>Before doing anything, close Taiga and take a backup of your installation directory (<code>%AppData%\Taiga</code> by default).</li>
-          <li>This is not an installer. You need to copy the file into your installation directory, replacing the old <code>Taiga.exe</code>.</li>
-        </ul>
+        <p class="mb-2">This build is a preview of Taiga's next version, containing the improvements made since the last public release. Note that it may include unstable features. It is provided for testing, not for daily use.</p>
+        <h2 class="h5">Usage</h2>
+        <ol class="pl-3">
+          <li>Exit Taiga, if it is still running.</li>
+          <li>Take a backup of your installation directory (<code>%AppData%\Taiga</code> by default), just in case.</li>
+          <li>Move the downloaded file into your installation directory, replacing the old <code>Taiga.exe</code>.</li>
+        </ol>
         <a class="btn btn-primary btn-md btn-download" href="/latest.php">
           <i class="fas fa-download"></i> Download <span class="version">Taiga.exe</span>
         </a>
